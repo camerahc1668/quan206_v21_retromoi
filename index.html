@@ -1990,10 +1990,125 @@ select.minp{-webkit-appearance:none;appearance:none}
 /* Focus/selection */
 button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 ::selection{background:var(--accent-light);color:var(--text)}
+
+/* ══════════════════════════════════════════════
+   LOGIN & PERMISSION SYSTEM
+   ══════════════════════════════════════════════ */
+#login-screen{position:fixed;inset:0;z-index:9999;background:linear-gradient(160deg,#3A1800 0%,#6B3410 40%,#4A2000 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px 20px;background-size:cover;background-position:center;transition:background-image .4s}
+#login-screen::before{content:'';position:absolute;inset:0;background:rgba(0,0,0,.52);z-index:0;pointer-events:none}
+#login-screen>*{position:relative;z-index:1}
+/* login bg preview */
+.login-bg-preview{width:100%;height:80px;border-radius:8px;object-fit:cover;border:2px solid var(--border);display:block;margin-bottom:8px}
+.login-bg-placeholder{width:100%;height:80px;border-radius:8px;background:linear-gradient(135deg,#3A1800,#6B3410);border:2px dashed var(--border);display:flex;align-items:center;justify-content:center;font-size:28px;margin-bottom:8px;cursor:pointer;transition:opacity .15s}
+.login-bg-placeholder:hover{opacity:.8}
+.login-logo{font-size:52px;margin-bottom:6px;filter:drop-shadow(0 4px 12px rgba(0,0,0,.5));animation:logoBounce .6s cubic-bezier(.36,.07,.19,.97) forwards}
+@keyframes logoBounce{0%{transform:scale(0) rotate(-15deg)}60%{transform:scale(1.12) rotate(3deg)}100%{transform:scale(1) rotate(0)}}
+.login-shop-name{font-family:'Playfair Display',Georgia,serif;font-size:22px;font-weight:900;color:#FFF8DC;margin-bottom:2px;text-align:center;text-shadow:0 2px 8px rgba(0,0,0,.4)}
+.login-shop-meta{font-size:12px;color:rgba(255,248,220,.6);margin-bottom:28px;text-align:center;font-style:italic}
+.login-card{background:rgba(255,248,220,.07);border:1px solid rgba(255,248,220,.15);border-radius:14px;padding:22px 20px 24px;width:100%;max-width:360px;backdrop-filter:blur(8px)}
+.login-title{font-size:11px;font-weight:700;color:rgba(255,248,220,.7);text-transform:uppercase;letter-spacing:.8px;margin-bottom:14px;text-align:center;font-family:'Lora',serif}
+.login-staff-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px;max-height:220px;overflow-y:auto}
+.login-staff-btn{background:rgba(255,255,255,.08);border:1.5px solid rgba(255,248,220,.18);border-radius:8px;padding:10px 7px;cursor:pointer;transition:all .18s;text-align:center}
+.login-staff-btn:hover{background:rgba(255,255,255,.16);border-color:rgba(255,248,220,.45);transform:translateY(-2px)}
+.login-staff-btn.selected{background:rgba(212,168,67,.28);border-color:#D4A843;transform:translateY(-2px)}
+.login-staff-avatar{width:36px;height:36px;border-radius:6px;background:linear-gradient(135deg,#8B4513,#C4571A);display:flex;align-items:center;justify-content:center;font-size:15px;color:#FFF8DC;font-weight:700;margin:0 auto 5px;font-family:'Playfair Display',serif}
+.login-staff-name{font-size:11px;font-weight:700;color:#FFF8DC;font-family:'Lora',serif;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.login-staff-role{font-size:8px;color:rgba(255,248,220,.55);font-style:italic;margin-top:1px}
+.login-admin-btn{width:100%;background:rgba(139,69,19,.3);border:1.5px solid rgba(255,248,220,.2);border-radius:8px;padding:10px 13px;cursor:pointer;display:flex;align-items:center;gap:10px;transition:all .18s;margin-bottom:14px}
+.login-admin-btn:hover{background:rgba(139,69,19,.55);border-color:rgba(255,248,220,.4)}
+.login-admin-btn.selected{background:rgba(139,69,19,.6);border-color:#D4A843}
+.login-admin-icon{font-size:22px}
+.login-admin-label{font-size:13px;font-weight:700;color:#FFF8DC;font-family:'Lora',serif}
+.login-admin-sub{font-size:9px;color:rgba(255,248,220,.55);font-style:italic;margin-top:1px}
+.login-pin-section{display:none}
+.login-pin-section.show{display:block;animation:fadeUp .2s ease}
+.login-pin-label{font-size:11px;color:rgba(255,248,220,.7);text-align:center;margin-bottom:11px;font-style:italic;font-family:'Lora',serif}
+.pin-dots{display:flex;gap:12px;justify-content:center;margin-bottom:16px}
+.pin-dot{width:14px;height:14px;border-radius:50%;border:2px solid rgba(255,248,220,.35);transition:all .15s}
+.pin-dot.filled{background:#D4A843;border-color:#D4A843;transform:scale(1.2)}
+.pin-dot.error{background:#922B21;border-color:#922B21;animation:shake .3s ease}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+.pin-pad{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-bottom:10px}
+.pin-key{background:rgba(255,255,255,.1);border:1px solid rgba(255,248,220,.15);border-radius:8px;padding:14px 8px;font-size:20px;font-weight:700;color:#FFF8DC;cursor:pointer;text-align:center;transition:all .12s;box-shadow:0 3px 0 rgba(0,0,0,.3);font-family:'Playfair Display',serif;-webkit-tap-highlight-color:transparent;user-select:none}
+.pin-key:hover{background:rgba(255,255,255,.2);transform:translateY(-2px);box-shadow:0 5px 0 rgba(0,0,0,.35)}
+.pin-key:active{transform:translateY(2px);box-shadow:none;background:rgba(255,255,255,.28)}
+.pin-key.zero{grid-column:2}
+.pin-key.del{font-size:18px}
+.pin-error-msg{text-align:center;font-size:11px;color:#F09595;min-height:16px;font-style:italic;font-family:'Lora',serif;margin-bottom:6px}
+.login-back-btn{width:100%;background:none;border:none;color:rgba(255,248,220,.45);font-size:11px;cursor:pointer;padding:8px;font-style:italic;font-family:'Lora',serif;transition:color .15s}
+.login-back-btn:hover{color:rgba(255,248,220,.8)}
+/* Login history */
+.lh-row{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--border)}
+.lh-row:last-child{border-bottom:none}
+.lh-avatar{width:32px;height:32px;border-radius:4px;background:var(--accent-grd);display:flex;align-items:center;justify-content:center;font-size:13px;color:#FFF8DC;font-weight:700;flex-shrink:0;font-family:'Playfair Display',serif}
+.lh-body{flex:1;min-width:0}
+.lh-name{font-size:12px;font-weight:700;color:var(--text);font-family:'Lora',serif}
+.lh-detail{font-size:10px;color:var(--muted);font-style:italic}
+.lh-dur{font-size:11px;font-weight:700;color:var(--accent);white-space:nowrap;font-family:'Playfair Display',serif}
+/* Tab permission lock */
+.tab.tab-locked{opacity:.28;pointer-events:none;cursor:not-allowed}
+.tab.tab-locked::after{display:none}
+/* Role badge */
+.role-badge{font-size:8px;background:rgba(255,255,255,.18);border-radius:3px;padding:2px 6px;text-transform:uppercase;letter-spacing:.4px;color:#FFF8DC;font-weight:700;margin-left:4px}
+.role-badge.admin{background:rgba(212,168,67,.45)}
+.role-badge.manager{background:rgba(30,64,87,.55)}
+
 </style>
 </head>
 <body>
 <div class="app-shell">
+
+<!-- ═══════════════════════════════ LOGIN SCREEN ═══════════════════════════════ -->
+<div id="login-screen">
+  <div id="login-logo-wrap" style="text-align:center">
+    <div class="login-logo" id="login-logo-icon">☕</div>
+    <div class="login-shop-name" id="login-shop-name">Cà Phê 206</div>
+    <div class="login-shop-meta" id="login-shop-meta">Đăng nhập để bắt đầu ca làm việc</div>
+  </div>
+  <div class="login-card">
+    <!-- BƯỚC 1: Chọn nhân viên / Admin -->
+    <div id="login-step-select">
+      <div class="login-title">Chọn nhân viên</div>
+      <div class="login-staff-grid" id="login-staff-grid">
+        <!-- Rendered by JS -->
+      </div>
+      <button class="login-admin-btn" id="login-admin-btn" onclick="selectLoginUser('__admin__','Admin','admin')">
+        <span class="login-admin-icon">👑</span>
+        <div>
+          <div class="login-admin-label">Admin</div>
+          <div class="login-admin-sub">Toàn quyền hệ thống</div>
+        </div>
+      </button>
+    </div>
+    <!-- BƯỚC 2: Nhập PIN -->
+    <div id="login-step-pin" class="login-pin-section">
+      <div class="login-pin-label" id="login-pin-label">Nhập mã PIN</div>
+      <div class="pin-dots">
+        <div class="pin-dot" id="pd0"></div>
+        <div class="pin-dot" id="pd1"></div>
+        <div class="pin-dot" id="pd2"></div>
+        <div class="pin-dot" id="pd3"></div>
+        <div class="pin-dot" id="pd4" style="display:none"></div>
+        <div class="pin-dot" id="pd5" style="display:none"></div>
+      </div>
+      <div class="pin-pad">
+        <button class="pin-key" onclick="pinPress('1')">1</button>
+        <button class="pin-key" onclick="pinPress('2')">2</button>
+        <button class="pin-key" onclick="pinPress('3')">3</button>
+        <button class="pin-key" onclick="pinPress('4')">4</button>
+        <button class="pin-key" onclick="pinPress('5')">5</button>
+        <button class="pin-key" onclick="pinPress('6')">6</button>
+        <button class="pin-key" onclick="pinPress('7')">7</button>
+        <button class="pin-key" onclick="pinPress('8')">8</button>
+        <button class="pin-key" onclick="pinPress('9')">9</button>
+        <button class="pin-key zero" onclick="pinPress('0')">0</button>
+        <button class="pin-key del" onclick="pinDel()">⌫</button>
+      </div>
+      <div class="pin-error-msg" id="pin-error"></div>
+      <button class="login-back-btn" onclick="loginBack()">← Chọn lại</button>
+    </div>
+  </div>
+</div>
 
 <!-- TOPBAR -->
 <div class="topbar">
@@ -2018,7 +2133,10 @@ button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid 
 
   <!-- RIGHT: Action buttons -->
   <div class="topbar-right">
-    <div class="staff-chip" id="staff-chip" onclick="event.stopPropagation();sw('settings',document.getElementById('tab-settings'))">👤 An</div>
+    <div class="staff-chip" id="staff-chip" onclick="openLoginHistory()" style="display:flex;align-items:center;gap:5px">
+      <span id="staff-chip-txt">👤 An</span>
+      <span class="role-badge" id="role-badge-chip" style="display:none"></span>
+    </div>
     <div style="position:relative">
       <button class="icon-btn-top" id="topbar-cart-btn" onclick="toggleCartPanel()" title="Giỏ hàng">🛒
         <span class="cart-topbar-badge" id="topbar-cart-cnt" style="display:none">0</span>
@@ -2349,6 +2467,29 @@ button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid 
       </div>
     </div>
 
+    <div class="sec-hd">Màn hình đăng nhập</div>
+    <div class="setting-group">
+      <div class="setting-group-hd">🖼 Hình nền màn hình Login</div>
+      <div style="padding:12px 16px">
+        <div id="login-bg-preview-wrap">
+          <div class="login-bg-placeholder" id="login-bg-ph" onclick="document.getElementById('login-bg-file').click()">🌅</div>
+          <img class="login-bg-preview" id="login-bg-img" src="" alt="" style="display:none" />
+        </div>
+        <div style="display:flex;gap:7px;align-items:center">
+          <input class="minp" id="login-bg-url" placeholder="Hoặc dán URL ảnh nền..." style="margin-bottom:0;font-size:12px;flex:1" oninput="previewLoginBg(this.value)" />
+          <label style="background:var(--accent-grd);color:#FFF8DC;border:none;border-radius:4px;padding:8px 12px;font-size:11px;font-weight:700;cursor:pointer;white-space:nowrap;box-shadow:0 2px 0 #4A2000;font-family:'Lora',serif;text-transform:uppercase;letter-spacing:.2px;flex-shrink:0">
+            📷 Chọn ảnh
+            <input type="file" id="login-bg-file" accept="image/*" style="display:none" onchange="handleLoginBgUpload(this)" />
+          </label>
+        </div>
+        <div style="display:flex;gap:7px;margin-top:8px">
+          <button onclick="applyLoginBg()" style="flex:1;background:var(--accent-grd);color:#FFF8DC;border:none;border-radius:4px;padding:9px;font-size:12px;font-weight:700;cursor:pointer;box-shadow:0 2px 0 #4A2000;font-family:'Lora',serif;text-transform:uppercase;letter-spacing:.2px">✅ Áp dụng</button>
+          <button onclick="clearLoginBg()" style="flex:1;background:var(--red-l);color:var(--red);border:1.5px solid #C4A882;border-radius:4px;padding:9px;font-size:12px;font-weight:700;cursor:pointer;font-family:'Lora',serif;text-transform:uppercase;letter-spacing:.2px">✕ Xoá hình</button>
+        </div>
+        <div style="font-size:10px;color:var(--muted);font-style:italic;margin-top:7px;font-family:'Lora',serif">Hình nền sẽ hiển thị trên màn hình đăng nhập. Tối đa 3MB.</div>
+      </div>
+    </div>
+
     <div class="sec-hd">Cloud & Đồng bộ</div>
     <div class="setting-group">
       <div class="setting-group-hd">🔥 Firebase Realtime Sync</div>
@@ -2672,13 +2813,27 @@ button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid 
 <div class="overlay" id="ov-add-staff">
   <div class="sheet">
     <div class="handle"></div>
-    <h3>👤 Thêm nhân viên</h3>
+    <h3>👤 Thêm / Sửa nhân viên</h3>
+    <input type="hidden" id="st-id" value="" />
+    <div class="flbl">Họ tên *</div>
     <input class="minp" id="st-name" placeholder="Tên nhân viên..." />
-    <input class="minp" id="st-role" placeholder="Chức vụ (VD: Thu ngân, Pha chế...)" />
-    <input class="minp" id="st-phone" placeholder="Số điện thoại..." type="tel" />
+    <div class="flbl">Chức vụ / Phân quyền *</div>
+    <select class="minp" id="st-role">
+      <option value="Nhân viên">👷 Nhân viên — Bán hàng, bếp, kho</option>
+      <option value="Quản lý">👔 Quản lý — Nhân viên + Nhập hàng, Báo cáo</option>
+      <option value="Admin">👑 Admin — Toàn quyền</option>
+    </select>
+    <div class="flbl">Số điện thoại</div>
+    <input class="minp" id="st-phone" placeholder="SĐT..." type="tel" />
+    <div class="flbl">Mã PIN đăng nhập (4 chữ số)</div>
+    <div style="position:relative">
+      <input class="minp" id="st-pin" placeholder="VD: 1234" type="number" maxlength="4" style="letter-spacing:6px;font-size:20px;text-align:center;padding-right:44px" />
+      <button onclick="document.getElementById('st-pin').type=document.getElementById('st-pin').type==='password'?'number':'password'" style="position:absolute;right:10px;top:50%;transform:translateY(-50%);background:none;border:none;font-size:16px;cursor:pointer;color:var(--muted)">👁</button>
+    </div>
+    <div style="font-size:10px;color:var(--muted);font-style:italic;margin-top:-6px;margin-bottom:10px">Để trống = dùng mã mặc định 1234</div>
     <div class="mbtns">
       <button class="mbtn sec" onclick="closeOverlay('ov-add-staff')">Huỷ</button>
-      <button class="mbtn prim" onclick="saveStaff()">Thêm</button>
+      <button class="mbtn prim" onclick="saveStaff()">💾 Lưu</button>
     </div>
   </div>
 </div>
@@ -2975,6 +3130,19 @@ button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid 
 
     <div class="mbtns">
       <button class="mbtn sec" onclick="closeOverlay('ov-firebase')">Đóng</button>
+    </div>
+  </div>
+</div>
+
+<!-- OVERLAY LỊCH SỬ CA LÀM VIỆC -->
+<div class="overlay" id="ov-login-history">
+  <div class="sheet" style="max-height:88vh">
+    <div class="handle"></div>
+    <h3>🕐 Lịch sử ca làm việc</h3>
+    <div id="login-history-content"></div>
+    <div class="mbtns" style="margin-top:12px">
+      <button class="mbtn sec" onclick="closeOverlay('ov-login-history')">Đóng</button>
+      <button class="mbtn danger" onclick="logoutNow()">🚪 Đăng xuất</button>
     </div>
   </div>
 </div>
@@ -4458,7 +4626,8 @@ function renderSettings(){
   document.getElementById('sv-acct-name').textContent=bank.name||'—';
   document.getElementById('sv-tables').textContent=`A:${S.tableConfig?.a||5}, B:${S.tableConfig?.b||5} bàn`;
   applyShopToUI();
-  document.getElementById('staff-chip').textContent='👤 NV: '+(S.curStaff||'An');
+  const chipTxt=document.getElementById('staff-chip-txt');
+  if(chipTxt)chipTxt.textContent='👤 '+(_session&&_session.user?_session.user.nm:(S.curStaff||'An'));
   renderStaffList();
   renderColorSwatches();
   const tog=document.getElementById('dark-toggle');
@@ -4468,6 +4637,8 @@ function renderSettings(){
     if(_fbEnabled&&_fbShopId)fbVal.textContent='✅ '+_fbShopId;
     else fbVal.textContent='Chưa kết nối';
   }
+  // Load login bg preview in settings
+  if(shop.loginBg){const t=setTimeout(()=>previewLoginBg(shop.loginBg),50);}
 }
 function renderStaffList(){
   const el=document.getElementById('staff-list-set');
@@ -4480,15 +4651,42 @@ function renderStaffList(){
       <button style="background:none;border:none;font-size:13px;cursor:pointer;color:var(--red)" onclick="deleteStaff('${st.id}')">🗑</button>
     </div>`).join('');
 }
-function setActiveStaff(nm){S.curStaff=nm;save();document.getElementById('staff-chip').textContent='👤 NV: '+nm;showToast('Đang đăng nhập: '+nm,'green');}
+function setActiveStaff(nm){S.curStaff=nm;save();const el=document.getElementById('staff-chip-txt');if(el)el.textContent='👤 '+nm;showToast('Ca làm: '+nm,'green');}
 function deleteStaff(id){if(!confirm('Xoá nhân viên?'))return;S.staffList=S.staffList.filter(s=>s.id!==id);save();renderStaffList();}
 function saveStaff(){
   const nm=document.getElementById('st-name').value.trim();
-  if(!nm){showToast('Nhập tên!','red');return}
+  if(!nm){showToast('Nhập tên nhân viên!','red');return;}
+  const role=document.getElementById('st-role').value||'Nhân viên';
+  const ph=document.getElementById('st-phone').value.trim();
+  const pinRaw=document.getElementById('st-pin').value.trim();
+  const pin=pinRaw&&/^\d{4}$/.test(pinRaw)?pinRaw:'1234';
+  const existId=document.getElementById('st-id').value;
   S.staffList=S.staffList||[];
-  S.staffList.push({id:'s'+Date.now(),nm,role:document.getElementById('st-role').value,ph:document.getElementById('st-phone').value});
-  ['st-name','st-role','st-phone'].forEach(id=>document.getElementById(id).value='');
-  save();closeOverlay('ov-add-staff');renderStaffList();showToast('Đã thêm nhân viên!','green');
+  if(existId){
+    // Edit existing
+    const st=S.staffList.find(s=>s.id===existId);
+    if(st){st.nm=nm;st.role=role;st.ph=ph;if(pinRaw&&/^\d{4}$/.test(pinRaw))st.pin=pinRaw;}
+    showToast('✅ Đã cập nhật nhân viên!','green');
+  } else {
+    // Add new
+    S.staffList.push({id:'s'+Date.now(),nm,role,ph,pin});
+    showToast('✅ Đã thêm '+nm+'!','green');
+  }
+  ['st-name','st-phone','st-pin'].forEach(id=>{const el=document.getElementById(id);if(el)el.value='';});
+  document.getElementById('st-id').value='';
+  save();closeOverlay('ov-add-staff');renderStaffList();renderManage();renderLoginScreen();
+}
+
+function openSetPin(staffId){
+  const st=(S.staffList||[]).find(s=>s.id===staffId);
+  if(!st)return;
+  // Pre-fill the staff overlay for editing
+  document.getElementById('st-id').value=st.id;
+  document.getElementById('st-name').value=st.nm;
+  document.getElementById('st-role').value=st.role||'Nhân viên';
+  document.getElementById('st-phone').value=st.ph||'';
+  document.getElementById('st-pin').value=st.pin||'';
+  openOverlay('ov-add-staff');
 }
 function saveBankInfo(){
   S.bank={bank:document.getElementById('bi-bank').value.trim(),acct:document.getElementById('bi-acct').value.trim(),name:document.getElementById('bi-name').value.trim()};
@@ -4935,12 +5133,14 @@ function renderManage(){
         <div class="staff-avatar" style="width:32px;height:32px;font-size:13px;flex-shrink:0">${st.nm.charAt(0)}</div>
         <div class="mgr-item-body">
           <div class="mgr-item-name">${st.nm}${S.curStaff===st.nm?'<span style="font-size:9px;background:var(--accent-light);color:var(--accent);border-radius:8px;padding:1px 6px;margin-left:5px">Đang làm</span>':''}</div>
-          <div class="mgr-item-sub">${st.role||'Nhân viên'}${st.ph?' · '+st.ph:''}</div>
+          <div class="mgr-item-sub">${st.role||'Nhân viên'}${st.ph?' · '+st.ph:''} · PIN: ${st.pin?'••••':'Chưa đặt'}</div>
         </div>
+        <button class="mgr-del" style="background:var(--yellow-l,#FFF8DC);color:#8B6B00;border:1.5px solid #C9A800;margin-right:4px" onclick="openSetPin('${st.id}')" title="Đặt PIN">🔑</button>
         <button class="mgr-del blue" onclick="setActiveStaff('${escQ(st.nm)}')" style="margin-right:4px" title="Chọn đang làm">✓</button>
         <button class="mgr-del red" onclick="deleteStaff('${st.id}');renderManage()">🗑</button>
       </div>`).join('')}
-    <button class="mgr-add-btn" onclick="openOverlay('ov-add-staff')">＋ Thêm nhân viên</button>`;
+    <button class="mgr-add-btn" onclick="openOverlay('ov-add-staff')">＋ Thêm nhân viên</button>
+    <button class="mgr-add-btn" style="margin-top:5px;border-color:var(--blue);color:var(--blue)" onclick="openLoginHistory()">🕐 Xem lịch sử ca làm việc</button>`;
 
   document.getElementById('mgr-wrap').innerHTML=
     acc('custs','👥','Khách hàng',`${S.custList.length} người`,custBody)+
@@ -6200,6 +6400,360 @@ function renderPeakHour(){
 }
 
 // ══════════════════════════════════════════════
+//  SYSTEM: LOGIN, PHÂN QUYỀN, LỊCH SỬ CA
+// ══════════════════════════════════════════════
+
+/* ── Phân quyền theo chức vụ ──
+   role: 'nhanvien' | 'quanly' | 'admin'
+   nhanvien: bàn, menu(order), bếp, khách, kho, công nợ, mang về
+   quanly:   nhanvien + nhập hàng, báo cáo
+   admin:    toàn bộ
+*/
+const ROLE_TABS={
+  nhanvien:['tables','menu','orders','customers','kho','congno'],
+  quanly:  ['tables','menu','orders','customers','kho','congno','nhap','report'],
+  admin:   ['tables','menu','orders','customers','kho','congno','nhap','report','menuconfig','manage','settings']
+};
+
+let _session={
+  user:null,   // {nm, role, id}
+  loginAt:null,
+  pinBuffer:''
+};
+let _loginTarget=null; // {nm, role, id, pinLen}
+
+/* ── Lịch sử đăng nhập lưu trong S ── */
+function ensureLoginHistory(){if(!S.loginHistory)S.loginHistory=[];}
+
+/* ── Render login screen ── */
+function renderLoginScreen(){
+  // Set shop branding on login
+  const shop=S.shop||{};
+  const logoEl=document.getElementById('login-logo-icon');
+  const nameEl=document.getElementById('login-shop-name');
+  const metaEl=document.getElementById('login-shop-meta');
+  if(logoEl&&shop.logo){
+    logoEl.innerHTML=`<img src="${shop.logo}" style="width:64px;height:64px;border-radius:12px;object-fit:cover;border:2px solid rgba(255,248,220,.35);" onerror="this.outerHTML='☕'" />`;
+  }
+  if(nameEl)nameEl.textContent=shop.name||'Cà Phê 206';
+  if(metaEl)metaEl.textContent=(shop.addr||'')+((shop.addr&&shop.phone)?' · ':''+(shop.phone||''));
+  // Render staff grid
+  const grid=document.getElementById('login-staff-grid');
+  const staff=S.staffList||[];
+  grid.innerHTML=staff.map(st=>`
+    <div class="login-staff-btn" onclick="selectLoginUser('${st.id}','${escQ(st.nm)}','${getRoleKey(st.role||'')}')">
+      <div class="login-staff-avatar">${st.nm.charAt(0).toUpperCase()}</div>
+      <div class="login-staff-name">${st.nm}</div>
+      <div class="login-staff-role">${st.role||'Nhân viên'}</div>
+    </div>`).join('');
+}
+
+function getRoleKey(roleStr){
+  const r=roleStr.toLowerCase();
+  if(r.includes('admin'))return'admin';
+  if(r.includes('quản lý')||r.includes('quan ly')||r.includes('manager'))return'quanly';
+  return'nhanvien';
+}
+
+function selectLoginUser(id,nm,role){
+  _loginTarget={id,nm,role};
+  // Highlight selected
+  document.querySelectorAll('.login-staff-btn,.login-admin-btn').forEach(b=>b.classList.remove('selected'));
+  event&&event.currentTarget&&event.currentTarget.classList.add('selected');
+  // Determine PIN length
+  const isAdmin=(id==='__admin__');
+  const pinLen=isAdmin?4:4; // admin=6 digits but PIN stored on staff record
+  _loginTarget.pinLen=isAdmin?6:4;
+  _loginTarget.isAdmin=isAdmin;
+  // Show PIN step
+  document.getElementById('login-step-select').style.display='none';
+  const pinSection=document.getElementById('login-step-pin');
+  pinSection.classList.add('show');
+  pinSection.style.display='block';
+  document.getElementById('login-pin-label').textContent=
+    isAdmin?`👑 Admin — Nhập mã 6 số`:`Xin chào ${nm} — Nhập mã PIN 4 số`;
+  // Show correct number of dots
+  const numDots=_loginTarget.pinLen;
+  for(let i=0;i<6;i++){
+    const dot=document.getElementById('pd'+i);
+    if(dot)dot.style.display=i<numDots?'':'none';
+  }
+  _session.pinBuffer='';
+  updatePinDots();
+  document.getElementById('pin-error').textContent='';
+}
+
+function loginBack(){
+  document.getElementById('login-step-select').style.display='';
+  document.getElementById('login-step-pin').classList.remove('show');
+  document.getElementById('login-step-pin').style.display='none';
+  document.querySelectorAll('.login-staff-btn,.login-admin-btn').forEach(b=>b.classList.remove('selected'));
+  _session.pinBuffer='';
+  _loginTarget=null;
+  updatePinDots();
+}
+
+function pinPress(digit){
+  if(!_loginTarget)return;
+  const maxLen=_loginTarget.pinLen;
+  if(_session.pinBuffer.length>=maxLen)return;
+  _session.pinBuffer+=digit;
+  updatePinDots();
+  if(_session.pinBuffer.length===maxLen) setTimeout(checkPin,120);
+}
+
+function pinDel(){
+  _session.pinBuffer=_session.pinBuffer.slice(0,-1);
+  updatePinDots();
+  document.getElementById('pin-error').textContent='';
+}
+
+function updatePinDots(){
+  const n=_loginTarget?_loginTarget.pinLen:4;
+  for(let i=0;i<n;i++){
+    const dot=document.getElementById('pd'+i);
+    if(dot){
+      dot.classList.toggle('filled',i<_session.pinBuffer.length);
+      dot.classList.remove('error');
+    }
+  }
+}
+
+function checkPin(){
+  const target=_loginTarget;
+  const pin=_session.pinBuffer;
+  let correct=false;
+  // Admin check
+  if(target.isAdmin){
+    correct=(pin==='686868');
+  } else {
+    // Staff PIN: stored in staffList
+    const st=(S.staffList||[]).find(s=>s.id===target.id);
+    const staffPin=st&&st.pin?String(st.pin):'1234'; // default 1234
+    correct=(pin===staffPin);
+  }
+  if(correct){
+    doLogin(target);
+  } else {
+    // Shake error
+    for(let i=0;i<target.pinLen;i++){
+      const dot=document.getElementById('pd'+i);
+      if(dot&&i<pin.length)dot.classList.add('error');
+    }
+    document.getElementById('pin-error').textContent='❌ Sai mã PIN, thử lại!';
+    _session.pinBuffer='';
+    setTimeout(()=>{updatePinDots();document.getElementById('pin-error').textContent='';},700);
+  }
+}
+
+function doLogin(target){
+  _session.user={id:target.id,nm:target.nm,role:target.role,isAdmin:target.isAdmin};
+  _session.loginAt=Date.now();
+  _session.pinBuffer='';
+  // Record login history
+  ensureLoginHistory();
+  S.loginHistory.unshift({
+    type:'login',
+    staffId:target.id,
+    staffNm:target.nm,
+    role:target.role,
+    ts:Date.now(),
+    tsStr:new Date().toLocaleString('vi-VN')
+  });
+  // Limit to 200 records
+  if(S.loginHistory.length>200)S.loginHistory.splice(200);
+  // Update S.curStaff
+  S.curStaff=target.nm;
+  save();
+  // Hide login screen
+  const ls=document.getElementById('login-screen');
+  ls.style.opacity='0';ls.style.transition='opacity .4s';
+  setTimeout(()=>{ls.style.display='none';},400);
+  // Apply permissions
+  applyRolePermissions(target.role);
+  // Update topbar chip
+  updateSessionChip();
+  showToast(`✅ Chào ${target.nm}! Ca làm việc bắt đầu.`,'green');
+}
+
+function updateSessionChip(){
+  const u=_session.user;
+  if(!u)return;
+  const chipTxt=document.getElementById('staff-chip-txt');
+  const chipBadge=document.getElementById('role-badge-chip');
+  if(chipTxt)chipTxt.textContent='👤 '+u.nm;
+  if(chipBadge){
+    const labels={admin:'Admin',quanly:'Quản lý',nhanvien:'NV'};
+    chipBadge.textContent=labels[u.role]||'NV';
+    chipBadge.className='role-badge '+(u.role==='admin'?'admin':u.role==='quanly'?'manager':'');
+    chipBadge.style.display='';
+  }
+}
+
+function applyRolePermissions(role){
+  const allowed=ROLE_TABS[role]||ROLE_TABS.nhanvien;
+  document.querySelectorAll('.tab[data-sc]').forEach(tab=>{
+    const sc=tab.getAttribute('data-sc');
+    if(allowed.includes(sc)){
+      tab.classList.remove('tab-locked');
+      tab.style.pointerEvents='';
+      tab.style.opacity='';
+    } else {
+      tab.classList.add('tab-locked');
+      tab.style.pointerEvents='none';
+      tab.style.opacity='.2';
+    }
+  });
+  // If currently on a locked screen, switch to tables
+  const active=document.querySelector('.screen.on');
+  if(active){
+    const id=active.id.replace('sc-','');
+    if(!allowed.includes(id)){sw('tables',document.querySelector('.tab[data-sc=tables]'));}
+  }
+}
+
+function openLoginHistory(){
+  if(!_session.user){showToast('Vui lòng đăng nhập trước!','red');return;}
+  ensureLoginHistory();
+  // Calculate current session duration
+  const nowMs=Date.now();
+  const dur=_session.loginAt?Math.floor((nowMs-_session.loginAt)/60000):0;
+  const durStr=dur<60?dur+' phút':Math.floor(dur/60)+'h '+( dur%60)+'p';
+  const rows=S.loginHistory.slice(0,50).map(h=>{
+    const isLogin=h.type==='login';
+    const roles={admin:'Admin',quanly:'Quản lý',nhanvien:'NV'};
+    return`<div class="lh-row">
+      <div class="lh-avatar">${(h.staffNm||'?').charAt(0).toUpperCase()}</div>
+      <div class="lh-body">
+        <div class="lh-name">${h.staffNm||'—'} <span style="font-size:9px;background:var(--accent-light);color:var(--accent);border-radius:3px;padding:1px 5px;font-family:'Lora',serif">${roles[h.role]||h.role}</span></div>
+        <div class="lh-detail">${isLogin?'🟢 Đăng nhập':'🔴 Đăng xuất'} · ${h.tsStr||''} ${h.duration?'· Ca: '+h.duration:''}</div>
+      </div>
+      <div class="lh-dur" style="color:${isLogin?'var(--accent)':'var(--muted2)'}">${isLogin?'▶':'■'}</div>
+    </div>`;
+  }).join('');
+  document.getElementById('login-history-content').innerHTML=`
+    <div style="background:var(--accent-light);border-radius:6px;padding:11px 13px;margin-bottom:14px;border:2px solid var(--border)">
+      <div style="font-size:12px;font-weight:700;color:var(--text);font-family:'Playfair Display',serif">Ca hiện tại: ${_session.user.nm}</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:3px;font-style:italic">Bắt đầu: ${new Date(_session.loginAt).toLocaleString('vi-VN')} · Đã làm: ${durStr}</div>
+    </div>
+    ${rows||'<div style="text-align:center;padding:20px;color:var(--muted2);font-style:italic">Chưa có lịch sử</div>'}
+  `;
+  openOverlay('ov-login-history');
+}
+
+function logoutNow(){
+  if(!_session.user)return;
+  if(!confirm(`Đăng xuất khỏi ca của ${_session.user.nm}?`))return;
+  // Record logout + duration
+  const dur=_session.loginAt?Math.floor((Date.now()-_session.loginAt)/60000):0;
+  const durStr=dur<60?dur+' phút':Math.floor(dur/60)+'h '+(dur%60)+'p';
+  ensureLoginHistory();
+  S.loginHistory.unshift({
+    type:'logout',
+    staffId:_session.user.id,
+    staffNm:_session.user.nm,
+    role:_session.user.role,
+    ts:Date.now(),
+    tsStr:new Date().toLocaleString('vi-VN'),
+    duration:durStr
+  });
+  save();
+  closeOverlay('ov-login-history');
+  // Reset session
+  _session={user:null,loginAt:null,pinBuffer:''};
+  // Show login screen again
+  const ls=document.getElementById('login-screen');
+  ls.style.display='flex';ls.style.opacity='0';
+  setTimeout(()=>{ls.style.opacity='1';ls.style.transition='opacity .4s';},10);
+  loginBack();
+  renderLoginScreen();
+  // Remove permissions (lock everything)
+  document.querySelectorAll('.tab[data-sc]').forEach(tab=>{tab.classList.add('tab-locked');tab.style.opacity='.2';tab.style.pointerEvents='none';});
+  // Reset chip
+  const chipTxt=document.getElementById('staff-chip-txt');
+  const chipBadge=document.getElementById('role-badge-chip');
+  if(chipTxt)chipTxt.textContent='👤 —';
+  if(chipBadge)chipBadge.style.display='none';
+  showToast('🚪 Đã đăng xuất!','orange');
+}
+
+// ─── Thêm PIN vào nhân viên từ quản lý ───
+// openSetPin now defined in saveStaff section above
+
+// ══════════════════════════════════════════════
+//  HÌNH NỀN MÀN HÌNH LOGIN
+// ══════════════════════════════════════════════
+function handleLoginBgUpload(input){
+  const file=input.files[0];if(!file)return;
+  if(file.size>3*1024*1024){showToast('Ảnh quá lớn! Tối đa 3MB','red');return;}
+  const reader=new FileReader();
+  reader.onload=e=>{
+    previewLoginBg(e.target.result);
+    document.getElementById('login-bg-url').value='';
+  };
+  reader.readAsDataURL(file);
+  input.value='';
+}
+
+function previewLoginBg(src){
+  const img=document.getElementById('login-bg-img');
+  const ph=document.getElementById('login-bg-ph');
+  if(!src||!src.trim()){
+    if(img)img.style.display='none';
+    if(ph)ph.style.display='flex';
+    return;
+  }
+  if(img){img.src=src;img.style.display='block';}
+  if(ph)ph.style.display='none';
+}
+
+function applyLoginBg(){
+  const urlVal=document.getElementById('login-bg-url').value.trim();
+  const imgEl=document.getElementById('login-bg-img');
+  const src=urlVal||(imgEl&&imgEl.style.display!=='none'?imgEl.src:'');
+  if(!src){showToast('Chọn ảnh hoặc nhập URL trước!','orange');return;}
+  if(!S.shop)S.shop={};
+  S.shop.loginBg=src;
+  save();
+  applyLoginBackground(src);
+  showToast('✅ Đã áp dụng hình nền login!','green');
+}
+
+function clearLoginBg(){
+  if(!S.shop)S.shop={};
+  delete S.shop.loginBg;
+  save();
+  applyLoginBackground(null);
+  document.getElementById('login-bg-url').value='';
+  previewLoginBg(null);
+  showToast('Đã xoá hình nền login','orange');
+}
+
+function applyLoginBackground(src){
+  const ls=document.getElementById('login-screen');
+  if(!ls)return;
+  if(src){
+    ls.style.backgroundImage=`url('${src}')`;
+    ls.style.backgroundSize='cover';
+    ls.style.backgroundPosition='center';
+  } else {
+    ls.style.backgroundImage='';
+  }
+  // Update settings preview
+  previewLoginBg(src||null);
+  const urlInp=document.getElementById('login-bg-url');
+  if(urlInp&&src&&src.startsWith('http'))urlInp.value=src;
+}
+
+function initLoginBgSetting(){
+  const src=S.shop&&S.shop.loginBg;
+  if(src){
+    applyLoginBackground(src);
+    previewLoginBg(src);
+  }
+}
+
+// ══════════════════════════════════════════════
 //  INIT
 // ══════════════════════════════════════════════
 applyTheme(S.theme||0);
@@ -6211,17 +6765,23 @@ if(S.priceOverrides){Object.entries(S.priceOverrides).forEach(([id,p])=>{const m
 renderTables();renderCats();renderMenu();
 if(S.menuView&&S.menuView!=='grid')setMenuView(S.menuView);
 applyShopToUI();
-document.getElementById('staff-chip').textContent='👤 NV: '+(S.curStaff||'An');
 if(S.cartOpen){document.getElementById('cart-body').classList.add('open');document.getElementById('chev').classList.add('up');}
 updateCartPanel();
 checkStockAlert();
 startQROrderPolling();
-// Firebase auto-connect
 autoConnectFirebase();
-// Auto-save every 10s + on close
 setInterval(save,10000);
 setInterval(checkStockAlert,60000);
 window.addEventListener('beforeunload',save);
+
+// ─── Khởi động Login Screen ───
+document.querySelectorAll('.tab[data-sc]').forEach(tab=>{
+  tab.classList.add('tab-locked');
+  tab.style.opacity='.2';
+  tab.style.pointerEvents='none';
+});
+renderLoginScreen();
+initLoginBgSetting();
 </script>
 </body>
 </html>
