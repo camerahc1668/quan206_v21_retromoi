@@ -54,7 +54,7 @@
   /* Border radius giảm bớt — Retro vuông hơn */
   --r14:8px;--r10:6px;--r7:4px;--r20:20px;
 
-  --topbar-h:64px;--tabs-h:50px;
+  --topbar-h:64px;--tabs-h:46px;--tabs-total-h:92px;
 
   --glow-green:0 0 0 3px rgba(139,69,19,.25);
   --glow-orange:0 0 0 3px rgba(196,87,26,.25);
@@ -96,6 +96,7 @@ h1,h2,h3,.brand-name,.topbar-shop-name,.sheet h3{font-family:'Playfair Display',
 
 /* ─── WRAPPER ─── */
 .app-shell{width:100%;max-width:var(--app-max,480px);margin:0 auto;position:relative;min-height:100vh;display:flex;flex-direction:column}
+@media(min-width:600px){:root{--tabs-total-h:50px;--tabs-h:50px}.tabs{display:flex!important;overflow-x:auto}.tabs::-webkit-scrollbar{display:none}.tab{flex:0 0 auto!important;min-width:58px!important;padding:0 7px!important}.tab-icon{font-size:15px!important}.tab-label{font-size:8px!important;letter-spacing:.5px!important}}
 @media(min-width:768px){:root{--app-max:640px}.tbl-grid{grid-template-columns:repeat(4,1fr)!important}.menu-grid{grid-template-columns:repeat(3,1fr)!important}.rc-grid{grid-template-columns:repeat(4,1fr)!important}}
 @media(min-width:1100px){:root{--app-max:860px}body{background-color:#2C1A0E}body.dark{background-color:#0D0805}.app-shell{box-shadow:0 0 60px rgba(0,0,0,.6);border-radius:0;overflow:hidden;margin:20px auto}.tbl-grid{grid-template-columns:repeat(5,1fr)!important}.menu-grid{grid-template-columns:repeat(4,1fr)!important}.rc-grid{grid-template-columns:repeat(4,1fr)!important}.cart-bar{border-radius:0}}
 
@@ -120,14 +121,14 @@ h1,h2,h3,.brand-name,.topbar-shop-name,.sheet h3{font-family:'Playfair Display',
 .cart-panel-btns{display:flex;gap:7px}
 
 /* ─── TABS ─── */
-.tabs{display:flex;background:var(--surface);border-bottom:3px solid var(--border);position:sticky;top:var(--topbar-h);z-index:199;overflow-x:auto;box-shadow:0 2px 6px rgba(139,69,19,.1)}
-.tabs::-webkit-scrollbar{display:none}
-.tab{flex:0 0 auto;min-width:58px;height:var(--tabs-h);padding:0 7px;border:none;background:none;font-size:10px;font-weight:600;color:var(--muted);cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-3px;white-space:nowrap;transition:all .2s;letter-spacing:.3px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;font-family:'Lora',serif;text-transform:uppercase}
+.tabs{display:grid;grid-template-columns:repeat(6,1fr);background:var(--surface);border-bottom:3px solid var(--border);position:sticky;top:var(--topbar-h);z-index:199;box-shadow:0 2px 6px rgba(139,69,19,.1)}
+.tab{position:relative;min-width:0;height:var(--tabs-h);padding:0 4px;border:none;background:none;font-size:10px;font-weight:600;color:var(--muted);cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-3px;white-space:nowrap;transition:all .2s;letter-spacing:.3px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;font-family:'Lora',serif;text-transform:uppercase}
 .tab::after{content:'';position:absolute;bottom:-3px;left:50%;width:0;height:3px;background:var(--accent);border-radius:2px 2px 0 0;transition:width .25s,left .25s}
 .tab.on{color:var(--accent)}
 .tab.on::after{width:100%;left:0}
-.tab-icon{font-size:15px;line-height:1}
-.tab-label{font-size:8px;font-weight:700;letter-spacing:.5px;text-transform:uppercase}
+.tab-icon{font-size:14px;line-height:1}
+.tab-label{font-size:7.5px;font-weight:700;letter-spacing:.4px;text-transform:uppercase}
+@media(min-width:600px){.tabs{display:flex;overflow-x:auto}.tabs::-webkit-scrollbar{display:none}.tab{flex:0 0 auto;min-width:58px;padding:0 7px}.tab-icon{font-size:15px}.tab-label{font-size:8px;letter-spacing:.5px}}
 
 /* ─── SCREENS ─── */
 .screen{display:none}
@@ -393,7 +394,26 @@ h1,h2,h3,.brand-name,.topbar-shop-name,.sheet h3{font-family:'Playfair Display',
 .top-b{height:100%;background:var(--accent-grd);border-radius:4px;transition:width .6s cubic-bezier(.4,0,.2,1)}
 .top-v{font-size:11px;font-weight:700;color:var(--accent);min-width:32px;text-align:right}
 
-/* ─── KHO ─── */
+/* ─── RECENT INVOICES (Báo cáo) ─── */
+.inv-list-card{background:var(--surface);border-radius:var(--r14);border:1px solid var(--border);margin-bottom:11px;box-shadow:var(--shadow-sm);overflow:hidden}
+.inv-list-hdr{display:flex;align-items:center;justify-content:space-between;padding:13px 15px 11px;border-bottom:1px solid var(--border);background:var(--bg)}
+.inv-list-hdr h4{font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin:0}
+.inv-list-clear{background:var(--red-l);border:none;border-radius:var(--r7);padding:5px 11px;font-size:10px;font-weight:700;color:var(--red);cursor:pointer;transition:all .15s}
+.inv-list-clear:hover{background:var(--red);color:#fff}
+.inv-row{display:flex;align-items:center;gap:9px;padding:10px 15px;border-bottom:1px solid var(--border);transition:background .15s}
+.inv-row:last-child{border-bottom:none}
+.inv-row:hover{background:var(--bg)}
+.inv-num{font-size:10px;font-weight:700;color:var(--muted2);min-width:22px}
+.inv-info{flex:1;min-width:0}
+.inv-tbl{font-size:12px;font-weight:700;color:var(--text);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.inv-time{font-size:10px;color:var(--muted2);margin-top:1px}
+.inv-amt{font-size:13px;font-weight:800;color:var(--accent);white-space:nowrap;flex-shrink:0}
+.inv-actions{display:flex;gap:5px;flex-shrink:0}
+.inv-view-btn{background:var(--accent-light);border:none;border-radius:var(--r7);padding:5px 9px;font-size:10px;font-weight:700;color:var(--accent);cursor:pointer;transition:all .15s;white-space:nowrap}
+.inv-view-btn:hover{background:var(--accent);color:#fff}
+.inv-del-btn{background:var(--red-l);border:none;border-radius:var(--r7);padding:5px 8px;font-size:12px;cursor:pointer;color:var(--red);transition:all .15s}
+.inv-del-btn:hover{background:var(--red);color:#fff}
+.inv-empty{padding:22px;text-align:center;font-size:12px;color:var(--muted2);font-style:italic}
 .kho-header{display:flex;justify-content:space-between;align-items:center;padding:13px 15px 7px}
 .kho-header h3{font-size:15px;font-weight:800;color:var(--text)}
 .kho-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;padding:0 13px 12px}
@@ -536,6 +556,25 @@ select.minp{-webkit-appearance:none;appearance:none}
 .confirm-pay:active{transform:scale(.97)}
 .cancel-link{width:100%;background:none;border:none;color:var(--muted2);font-size:13px;padding:11px;cursor:pointer;margin-top:5px;transition:color .15s}
 .cancel-link:hover{color:var(--text)}
+
+/* ─── QR BANK PANEL IN PAY ─── */
+.qr-bank-panel{background:linear-gradient(135deg,#f0fdf4,#dcfce7);border:2px solid var(--accent);border-radius:var(--r14);padding:14px;margin-bottom:12px;text-align:center;display:none;animation:fadeUp .2s ease}
+.dark .qr-bank-panel{background:rgba(22,163,74,.1)}
+.qr-bank-panel.show{display:block}
+.qr-bank-panel img{width:160px;height:160px;border:3px solid var(--accent);border-radius:8px;display:block;margin:0 auto 8px}
+.qr-bank-info{font-size:11px;color:var(--accent);font-weight:700;line-height:1.7}
+.qr-bank-amt{font-size:18px;font-weight:900;color:var(--accent);margin-bottom:4px;font-family:'Playfair Display',serif}
+
+/* ─── PDF PREVIEW MODAL ─── */
+#pdf-modal{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:600;display:none;align-items:center;justify-content:center;backdrop-filter:blur(6px)}
+#pdf-modal.open{display:flex;animation:bgFade .2s ease}
+.pdf-modal-box{background:var(--surface);border-radius:16px;width:min(400px,calc(100vw - 24px));max-height:92vh;display:flex;flex-direction:column;box-shadow:0 24px 60px rgba(0,0,0,.4);border:2px solid var(--border)}
+.pdf-modal-hdr{padding:14px 18px 12px;border-bottom:2px solid var(--border);display:flex;align-items:center;justify-content:space-between;background:var(--accent-light);border-radius:14px 14px 0 0;flex-shrink:0}
+.pdf-modal-title{font-size:16px;font-weight:800;color:var(--text);font-family:'Playfair Display',serif}
+.pdf-modal-close{background:none;border:none;font-size:20px;cursor:pointer;color:var(--muted);transition:transform .15s;line-height:1}
+.pdf-modal-close:hover{transform:scale(1.2);color:var(--text)}
+.pdf-modal-body{flex:1;overflow-y:auto;padding:16px}
+.pdf-modal-ft{padding:12px 16px 16px;border-top:2px solid var(--border);display:flex;gap:8px;flex-shrink:0;background:var(--bg);border-radius:0 0 14px 14px}
 
 /* ─── INVOICE ─── */
 .invoice-wrap{background:#fff;color:#000;padding:20px;max-width:320px;margin:0 auto;font-family:'Courier New',monospace}
@@ -2712,6 +2751,12 @@ button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid 
       <button class="pm-btn" onclick="selPM('bank',this)">🏦<br>Chuyển khoản</button>
       <button class="pm-btn" onclick="selPM('momo',this)">🟣<br>MoMo</button>
     </div>
+    <!-- QR chuyển khoản -->
+    <div class="qr-bank-panel" id="pay-qr-panel">
+      <div class="qr-bank-amt" id="pay-qr-amt">0đ</div>
+      <img id="pay-qr-img" src="" alt="QR chuyển khoản" onerror="this.style.display='none'" />
+      <div class="qr-bank-info" id="pay-qr-info"></div>
+    </div>
     <div class="pay-amount-wrap">
       <div class="pay-amount-lbl">Số tiền khách đưa</div>
       <input class="pay-amount-inp" type="number" id="pay-given" placeholder="0" oninput="calcChange()" />
@@ -2729,7 +2774,23 @@ button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid 
     <div id="invoice-content"></div>
     <div class="mbtns" style="margin-top:12px">
       <button class="mbtn sec" onclick="closeOverlay('ov-invoice')">Đóng</button>
+      <button class="mbtn sec" style="background:var(--blue-l);color:var(--blue);border-color:var(--blue)" onclick="openPdfPreview()">📄 Xuất PDF</button>
       <button class="mbtn prim" onclick="printInvoice()">🖨 In hoá đơn</button>
+    </div>
+  </div>
+</div>
+
+<!-- PDF PREVIEW MODAL -->
+<div id="pdf-modal">
+  <div class="pdf-modal-box">
+    <div class="pdf-modal-hdr">
+      <div class="pdf-modal-title">📄 Xem trước hoá đơn PDF</div>
+      <button class="pdf-modal-close" onclick="closePdfModal()">✕</button>
+    </div>
+    <div class="pdf-modal-body" id="pdf-modal-body"></div>
+    <div class="pdf-modal-ft">
+      <button class="mbtn sec" style="flex:1" onclick="closePdfModal()">Đóng</button>
+      <button class="mbtn prim" style="flex:2" onclick="doPrintPdf()">🖨 Lưu / In PDF</button>
     </div>
   </div>
 </div>
@@ -3637,6 +3698,9 @@ function renderTables(){
       const c=S.customers[n];
       const dk=c?c.nm:'';
       const debt=dk&&S.debts[dk]&&S.debts[dk].total>0;
+      // Count items from active orders for this table
+      const activeOrders=S.orders.filter(o=>o.table===n&&(o.status==='pending'||o.status==='done'));
+      const itemCount=activeOrders.reduce((s,o)=>s+(o.items||[]).reduce((ss,it)=>ss+it.qty,0),0);
       h+=`<div class="tc ${cl}${sel}" onclick="selTable(${n})">
         <div class="tc-pulse"></div>
         <div class="tc-num">${n}</div>
@@ -3644,6 +3708,7 @@ function renderTables(){
         ${tb.takeaway?`<div class="tc-take-tag">🥡</div>`:''}
         <div class="tc-sub">${c?c.nm:''}</div>
         ${tb.status==='occupied'?`<div class="tc-amt">${fmt(tb.amt)}</div>`:''}
+        ${tb.status==='occupied'&&itemCount>0?`<div class="tc-sub" style="color:var(--orange);font-weight:700">${itemCount} món</div>`:''}
         ${debt?`<div class="tc-debt">Nợ</div>`:''}
       </div>`;
     });
@@ -3974,6 +4039,7 @@ function placeOrder(){
   S.cart={};S.cartNotes={};save();updateCartUI();
   if(S.cartOpen)toggleCart();
   closeCartPanel();
+  renderTables();
   showToast('Đã gửi '+oid+' lên bếp 🔔','green');
 }
 
@@ -3993,6 +4059,11 @@ function openPayFromCart(){
   document.getElementById('pay-given').value='';
   document.getElementById('pay-change-info').textContent=`Cần thanh toán: ${fmt(_payTotal)}`;
   document.getElementById('pay-change-info').style.color='var(--muted2)';
+  // Reset payment method to cash + hide QR
+  document.querySelectorAll('.pm-btn').forEach(b=>b.classList.remove('on'));
+  const cashBtn=document.querySelector('.pm-btn');if(cashBtn)cashBtn.classList.add('on');
+  S.payMethod='cash';
+  const qrP=document.getElementById('pay-qr-panel');if(qrP)qrP.classList.remove('show');
   closeCartPanel();
   openOverlay('ov-pay');
 }
@@ -4004,6 +4075,11 @@ function openPayModal(oid){
   document.getElementById('pay-given').value='';
   document.getElementById('pay-change-info').textContent=`Cần thanh toán: ${fmt(_payTotal)}`;
   document.getElementById('pay-change-info').style.color='var(--muted2)';
+  // Reset payment method to cash + hide QR
+  document.querySelectorAll('.pm-btn').forEach(b=>b.classList.remove('on'));
+  const cashBtn=document.querySelector('.pm-btn');if(cashBtn)cashBtn.classList.add('on');
+  S.payMethod='cash';
+  const qrP=document.getElementById('pay-qr-panel');if(qrP)qrP.classList.remove('show');
   openOverlay('ov-pay');
 }
 function showPaySum(tbl,items,total){
@@ -4021,12 +4097,53 @@ function calcChange(){
   const el=document.getElementById('pay-change-info');
   const disc=calcDiscountAmt();
   const finalAmt=_payTotal-disc;
-  if(!given){el.textContent=`Cần thanh toán: ${fmt(finalAmt)}`;el.style.color='var(--muted2)';return}
-  const diff=given-finalAmt;
-  if(diff>=0){el.textContent=`✅ Tiền thừa trả lại: ${fmt(diff)}`;el.style.color='var(--accent)';}
-  else{el.textContent=`⚠️ Thiếu ${fmt(-diff)} → sẽ ghi vào công nợ`;el.style.color='var(--red)';}
+  if(!given){el.textContent=`Cần thanh toán: ${fmt(finalAmt)}`;el.style.color='var(--muted2)';}
+  else{
+    const diff=given-finalAmt;
+    if(diff>=0){el.textContent=`✅ Tiền thừa trả lại: ${fmt(diff)}`;el.style.color='var(--accent)';}
+    else{el.textContent=`⚠️ Thiếu ${fmt(-diff)} → sẽ ghi vào công nợ`;el.style.color='var(--red)';}
+  }
+  // Refresh QR amount if bank panel is showing
+  const panel=document.getElementById('pay-qr-panel');
+  if(panel&&panel.classList.contains('show')){
+    const amtEl=document.getElementById('pay-qr-amt');
+    const imgEl=document.getElementById('pay-qr-img');
+    if(amtEl)amtEl.textContent=fmt(finalAmt);
+    const bank=S.bank||{};
+    if(bank.bank&&bank.acct&&imgEl){
+      const qrDesc='Thanh toan '+(_payOrdId||'DH');
+      imgEl.src=`https://img.vietqr.io/image/${bank.bank.toUpperCase()}-${bank.acct}-compact2.png?amount=${finalAmt}&addInfo=${encodeURIComponent(qrDesc)}&accountName=${encodeURIComponent(bank.name||'')}`;
+    }
+  }
 }
-function selPM(m,el){S.payMethod=m;document.querySelectorAll('.pm-btn').forEach(b=>b.classList.remove('on'));el.classList.add('on');}
+function selPM(m,el){
+  S.payMethod=m;
+  document.querySelectorAll('.pm-btn').forEach(b=>b.classList.remove('on'));
+  el.classList.add('on');
+  const panel=document.getElementById('pay-qr-panel');
+  if(!panel)return;
+  if(m==='bank'){
+    const bank=S.bank||{};
+    if(bank.bank&&bank.acct){
+      const disc=calcDiscountAmt();
+      const finalAmt=_payTotal-disc;
+      const qrDesc='Thanh toan '+(_payOrdId||'DH');
+      const qrUrl=`https://img.vietqr.io/image/${bank.bank.toUpperCase()}-${bank.acct}-compact2.png?amount=${finalAmt}&addInfo=${encodeURIComponent(qrDesc)}&accountName=${encodeURIComponent(bank.name||'')}`;
+      const imgEl=document.getElementById('pay-qr-img');
+      const amtEl=document.getElementById('pay-qr-amt');
+      const infoEl=document.getElementById('pay-qr-info');
+      if(imgEl){imgEl.src=qrUrl;imgEl.style.display='block';}
+      if(amtEl)amtEl.textContent=fmt(finalAmt);
+      if(infoEl)infoEl.innerHTML=`${bank.bank} – ${bank.acct}<br>${bank.name||''}`;
+      panel.classList.add('show');
+    } else {
+      panel.classList.remove('show');
+      showToast('Chưa cài đặt thông tin ngân hàng!','orange');
+    }
+  } else {
+    panel.classList.remove('show');
+  }
+}
 function confirmPay(){
   const given=parseInt(document.getElementById('pay-given').value)||0;
   const disc=calcDiscountAmt();
@@ -4145,6 +4262,67 @@ function printInvoice(){
   </style></head><body>`+body.outerHTML+
   `<script>window.onload=()=>{window.print();setTimeout(()=>window.close(),600)}<\/script>
   </body></html>`);
+  w.document.close();
+}
+
+function openPdfPreview(){
+  const body=document.getElementById('inv-body');
+  if(!body){showToast('Không có dữ liệu hoá đơn!','red');return;}
+  const modal=document.getElementById('pdf-modal');
+  const modalBody=document.getElementById('pdf-modal-body');
+  if(!modal||!modalBody)return;
+  // Clone invoice into modal with full styles
+  modalBody.innerHTML=`
+    <div style="background:#f5f5f0;border-radius:8px;padding:8px;min-height:200px">
+      ${body.outerHTML}
+    </div>
+    <div style="margin-top:10px;padding:10px;background:var(--blue-l);border-radius:8px;border:1px solid #bfdbfe;font-size:11px;color:var(--blue);font-weight:600">
+      📋 Nhấn <b>Lưu / In PDF</b> → trình duyệt mở cửa sổ in → chọn <b>Save as PDF</b> để lưu file PDF.
+    </div>`;
+  modal.classList.add('open');
+}
+
+function closePdfModal(){
+  const modal=document.getElementById('pdf-modal');
+  if(modal)modal.classList.remove('open');
+}
+
+function doPrintPdf(){
+  const body=document.getElementById('inv-body');
+  if(!body)return;
+  const w=window.open('','_blank','width=420,height=780');
+  w.document.write(`<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Hoá đơn PDF</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Courier New',monospace;background:#fff;color:#000}
+    .invoice-wrap{background:#fff;color:#000;padding:20px 24px;max-width:360px;margin:0 auto;font-family:'Courier New',monospace}
+    .invoice-wrap *{font-family:'Courier New',monospace;color:#000}
+    .inv-title{text-align:center;font-size:18px;font-weight:700;margin-bottom:3px}
+    .inv-sub{text-align:center;font-size:11px;margin-bottom:2px;color:#555}
+    .inv-divider{border:none;border-top:1px dashed #999;margin:10px 0}
+    .inv-row{display:flex;justify-content:space-between;font-size:11px;padding:3px 0;gap:8px}
+    .inv-row span:last-child{text-align:right;white-space:nowrap;flex-shrink:0}
+    .inv-total-row{display:flex;justify-content:space-between;font-size:15px;font-weight:700;padding:8px 0;border-top:2px dashed #000;border-bottom:2px dashed #000;margin:6px 0}
+    .inv-qr-wrap{text-align:center;margin:14px 0 8px}
+    .inv-qr-wrap img{width:160px;height:160px;border:3px solid #000;border-radius:4px;display:block;margin:0 auto}
+    .inv-qr-label{font-size:10px;text-align:center;margin-top:8px;color:#444;line-height:1.6}
+    .inv-footer{text-align:center;font-size:10px;margin-top:14px;color:#666;line-height:1.7;padding-top:8px;border-top:1px dashed #ccc}
+    @page{size:A6;margin:6mm}
+    @media print{body{margin:0}@page{size:A6;margin:6mm}}
+  </style></head><body>`+body.outerHTML+
+  `<script>
+    window.onload=function(){
+      // Wait for QR image to load
+      const imgs=document.querySelectorAll('img');
+      let loaded=0;
+      if(!imgs.length){window.print();return;}
+      imgs.forEach(img=>{
+        if(img.complete){loaded++;if(loaded===imgs.length)window.print();}
+        else{img.onload=img.onerror=()=>{loaded++;if(loaded===imgs.length)window.print();};}
+      });
+      setTimeout(()=>window.print(),2500);
+    };
+  <\/script></body></html>`);
   w.document.close();
 }
 
@@ -4593,6 +4771,22 @@ function renderReport(){
   }
   const top=Object.entries(S.rp.tops).sort((a,b)=>b[1].qty-a[1].qty).slice(0,6);
   const maxQty=top.length?top[0][1].qty:1;
+  // Recent paid invoices
+  const paidOrders=(S.orders||[]).filter(o=>o.status==='paid').slice(0,30);
+  const invRows=paidOrders.length?paidOrders.map((o,i)=>`
+    <div class="inv-row" id="inv-row-${o.id}">
+      <div class="inv-num">${i+1}</div>
+      <div class="inv-info">
+        <div class="inv-tbl">${o.takeaway?'🥡 Mang về':(o.table?'🪑 Bàn '+o.table:'—')}${o.cust?' · '+o.cust:''}</div>
+        <div class="inv-time">${o.date||''}${o.time?' · '+o.time:''} · ${(o.items||[]).length} món</div>
+      </div>
+      <div class="inv-amt">${fmt(o.finalAmt||o.total||0)}</div>
+      <div class="inv-actions">
+        <button class="inv-view-btn" onclick="openInvoice('${o.id}')">🧾 Xem</button>
+        <button class="inv-del-btn" onclick="deleteInvoice('${o.id}')">🗑</button>
+      </div>
+    </div>`).join('')
+    :'<div class="inv-empty">Chưa có hóa đơn nào</div>';
   document.getElementById('rp-body').innerHTML=`
     <div class="rc-grid">
       <div class="rc"><div class="rc-lbl">💰 Doanh thu</div><div class="rc-val green">${fmt(rev)}</div></div>
@@ -4605,12 +4799,41 @@ function renderReport(){
     <div class="top-card"><h4>🏆 Top món bán chạy</h4>
     ${top.length?top.map(([nm,d],i)=>`<div class="top-row"><div class="top-rank">${['🥇','🥈','🥉','4','5','6'][i]}</div><div class="top-nm">${nm}</div><div class="top-bw"><div class="top-b" style="width:${Math.round(d.qty/maxQty*100)}%"></div></div><div class="top-v">${d.qty}</div></div>`).join('')
     :'<div class="empty" style="padding:20px"><div class="empty-txt">Chưa có dữ liệu</div></div>'}
+    </div>
+    <div class="inv-list-card">
+      <div class="inv-list-hdr">
+        <h4>🧾 Hóa đơn gần đây</h4>
+        ${paidOrders.length?`<button class="inv-list-clear" onclick="clearAllInvoices()">🗑 Xóa tất cả</button>`:''}
+      </div>
+      ${invRows}
     </div>`;
   if(rpChart){rpChart.destroy();rpChart=null;}
   const ctx=document.getElementById('rev-c');
   if(ctx&&typeof Chart!=='undefined'){
     rpChart=new Chart(ctx,{type:'bar',data:{labels,datasets:[{label:'Doanh thu',data:vals,backgroundColor:vals.map((_,i)=>i===vals.length-1?'#16a34a':'rgba(22,163,74,.35)'),borderRadius:8,borderSkipped:false}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>`${fmt(c.raw)}`}}},scales:{y:{ticks:{callback:v=>v>=1000?Math.round(v/1000)+'k':''+v,font:{size:9}},grid:{color:'rgba(128,128,128,.1)'},border:{display:false}},x:{ticks:{font:{size:9}},grid:{display:false},border:{display:false}}}}});
   }
+}
+
+function deleteInvoice(oid){
+  if(!confirm('Xóa hóa đơn này?'))return;
+  const o=S.orders.find(x=>x.id===oid);
+  if(o&&o.status==='paid'){
+    // Revert revenue stats
+    const amt=o.finalAmt||o.total||0;
+    S.rp.rev=Math.max(0,(S.rp.rev||0)-amt);
+    S.rp.orders=Math.max(0,(S.rp.orders||0)-1);
+    if(o.date&&S.rp.daily[o.date])S.rp.daily[o.date]=Math.max(0,S.rp.daily[o.date]-amt);
+    if(o.items){o.items.forEach(it=>{if(S.rp.tops[it.n]){S.rp.tops[it.n].qty=Math.max(0,(S.rp.tops[it.n].qty||0)-it.qty);S.rp.tops[it.n].rev=Math.max(0,(S.rp.tops[it.n].rev||0)-it.p*it.qty);}});}
+  }
+  S.orders=S.orders.filter(x=>x.id!==oid);
+  save();renderReport();showToast('Đã xóa hóa đơn','orange');
+}
+
+function clearAllInvoices(){
+  if(!confirm('Xóa tất cả hóa đơn đã thanh toán?\n⚠️ Thống kê doanh thu sẽ bị xóa!'))return;
+  S.orders=S.orders.filter(o=>o.status!=='paid');
+  S.rp={rev:0,orders:0,cost:0,daily:{},tops:{}};
+  save();renderReport();showToast('Đã xóa tất cả hóa đơn','orange');
 }
 
 // ══════════════════════════════════════════════
@@ -4736,6 +4959,9 @@ function saveImg(){if(!S.imgEditId)return;if(S.pendingImg)S.imgs[S.imgEditId]=S.
 function openOverlay(id){document.getElementById(id).classList.add('open');}
 function closeOverlay(id){document.getElementById(id).classList.remove('open');}
 document.querySelectorAll('.overlay').forEach(ov=>{ov.addEventListener('click',e=>{if(e.target===ov)ov.classList.remove('open');});});
+// Close PDF modal on backdrop click
+const pdfModalEl=document.getElementById('pdf-modal');
+if(pdfModalEl)pdfModalEl.addEventListener('click',e=>{if(e.target===pdfModalEl)closePdfModal();});
 
 // ══════════════════════════════════════════════
 //  TOAST
