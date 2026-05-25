@@ -557,7 +557,89 @@ select.minp{-webkit-appearance:none;appearance:none}
 .cancel-link{width:100%;background:none;border:none;color:var(--muted2);font-size:13px;padding:11px;cursor:pointer;margin-top:5px;transition:color .15s}
 .cancel-link:hover{color:var(--text)}
 
-/* ─── QR BANK PANEL IN PAY ─── */
+/* ─── GUIDE SCREEN ─── */
+.guide-wrap{padding:14px 14px 80px}
+.guide-hero{background:linear-gradient(140deg,var(--coffee) 0%,var(--espresso,#2C1A0E) 100%);border-radius:16px;padding:22px 18px 18px;text-align:center;margin-bottom:16px;position:relative;overflow:hidden;border:1.5px solid rgba(200,150,76,.3)}
+.guide-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(200,150,76,.18),transparent);pointer-events:none}
+.guide-hero-badge{display:inline-block;background:rgba(200,150,76,.2);border:1.5px solid rgba(200,150,76,.5);border-radius:30px;padding:4px 14px;font-size:10px;font-weight:700;color:var(--latte,#C8964C);letter-spacing:1.2px;text-transform:uppercase;margin-bottom:10px}
+.guide-hero h2{font-family:'Playfair Display',serif;font-size:20px;font-weight:900;color:#fff;line-height:1.25;margin-bottom:6px}
+.guide-hero h2 span{color:var(--latte,#C8964C)}
+.guide-hero p{font-size:11px;color:rgba(245,236,215,.65);line-height:1.6;max-width:300px;margin:0 auto 14px}
+.guide-hero-icons{display:flex;justify-content:center;gap:8px;flex-wrap:wrap}
+.guide-hero-icon{width:40px;height:40px;border-radius:11px;background:rgba(200,150,76,.15);border:1.5px solid rgba(200,150,76,.3);display:flex;align-items:center;justify-content:center;font-size:20px;transition:transform .2s}
+.guide-hero-icon:hover{transform:scale(1.12) rotate(-3deg)}
+
+/* Guide section title */
+.gd-sec{display:flex;align-items:center;gap:10px;margin:20px 0 10px}
+.gd-sec-icon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.gd-sec h3{font-size:15px;font-weight:800;color:var(--text)}
+.gd-sec p{font-size:10.5px;color:var(--muted2);margin-top:1px}
+
+/* Flow steps */
+.gd-flow{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:6px}
+.gd-step{flex:1 1 100px;min-width:90px;background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:14px 10px 12px;position:relative;text-align:center;transition:transform .2s,border-color .2s;cursor:default}
+.gd-step:hover{transform:translateY(-3px);border-color:var(--accent)}
+.gd-step .gs-num{position:absolute;top:-10px;left:50%;transform:translateX(-50%);width:20px;height:20px;border-radius:50%;background:var(--accent);color:#fff;font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center}
+.gd-step .gs-icon{font-size:24px;display:block;margin-bottom:6px}
+.gd-step .gs-name{font-size:11px;font-weight:800;color:var(--text);margin-bottom:3px}
+.gd-step .gs-desc{font-size:9.5px;color:var(--muted2);line-height:1.45}
+.gd-arrow{display:flex;align-items:center;font-size:16px;color:var(--accent);opacity:.6;flex-shrink:0;align-self:center}
+@media(max-width:480px){.gd-arrow{display:none}.gd-step{flex:1 1 calc(50% - 7px);min-width:0;max-width:none}}
+
+/* Tab cards */
+.gd-tabs{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;margin-bottom:6px}
+.gd-tab-item{background:var(--surface);border:1.5px solid var(--border);border-radius:10px;padding:12px 10px;text-align:center;transition:transform .2s,border-color .2s;cursor:default}
+.gd-tab-item:hover{transform:translateY(-3px);border-color:var(--accent)}
+.gd-tab-item .gti-icon{font-size:22px;display:block;margin-bottom:5px}
+.gd-tab-item .gti-name{font-size:11px;font-weight:800;color:var(--text);margin-bottom:3px}
+.gd-tab-item .gti-desc{font-size:9.5px;color:var(--muted2);line-height:1.4}
+
+/* Feature accordion cards */
+.gd-feat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px;margin-bottom:6px}
+.gd-feat{background:var(--surface);border:1.5px solid var(--border);border-radius:12px;overflow:hidden;transition:border-color .2s}
+.gd-feat:hover{border-color:var(--accent)}
+.gd-feat-hdr{display:flex;align-items:center;gap:10px;padding:13px 14px;cursor:pointer;user-select:none}
+.gd-feat-icon{width:36px;height:36px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.gd-feat-hdr h4{font-size:13px;font-weight:800;color:var(--text);flex:1}
+.gd-feat-hdr .gf-badge{font-size:9px;font-weight:700;padding:2px 8px;border-radius:12px;white-space:nowrap}
+.gd-feat-hdr .gf-arrow{font-size:12px;color:var(--muted2);transition:transform .2s;flex-shrink:0}
+.gd-feat.open .gf-arrow{transform:rotate(90deg)}
+.gd-feat-body{display:none;padding:0 14px 14px;border-top:1px solid var(--border)}
+.gd-feat.open .gd-feat-body{display:block}
+.gd-feat-list{list-style:none;padding:8px 0 0;margin:0}
+.gd-feat-list li{display:flex;align-items:flex-start;gap:7px;font-size:11.5px;color:var(--muted);line-height:1.55;padding:4px 0;border-bottom:1px solid var(--border)}
+.gd-feat-list li:last-child{border-bottom:none;padding-bottom:0}
+.gd-feat-list li::before{content:'·';color:var(--accent);font-weight:900;flex-shrink:0;margin-top:1px}
+
+/* Workflow diagram */
+.gd-workflow{background:var(--surface);border:1.5px solid var(--border);border-radius:14px;padding:14px 12px;margin-bottom:6px;overflow:hidden}
+.gd-wf-row{display:flex;align-items:stretch;gap:0;flex-wrap:wrap}
+.gd-wf-col{flex:1 1 140px;min-width:120px}
+.gd-wf-hdr{background:var(--bg);border-radius:8px;padding:8px 10px;text-align:center;margin-bottom:8px;border:1px solid var(--border)}
+.gd-wf-hdr span{font-size:16px;display:block;margin-bottom:2px}
+.gd-wf-hdr b{font-size:11px;font-weight:800;color:var(--text)}
+.gd-wf-arrow{display:flex;align-items:center;justify-content:center;padding:0 4px;color:var(--accent);font-size:18px;opacity:.6;flex-shrink:0;align-self:center}
+.gd-wf-items{display:flex;flex-direction:column;gap:4px}
+.gd-wf-item{background:var(--bg);border-radius:6px;padding:6px 8px;display:flex;align-items:center;gap:6px;border-left:3px solid transparent;transition:border-color .15s}
+.gd-wf-item:hover{border-left-color:var(--accent)}
+.gd-wf-item .wi{font-size:13px;flex-shrink:0}
+.gd-wf-item .wt{font-size:10.5px;color:var(--muted);line-height:1.4}
+@media(max-width:480px){.gd-wf-row{flex-direction:column;gap:8px}.gd-wf-arrow{transform:rotate(90deg);padding:2px 0}}
+
+/* Status legend */
+.gd-legend{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:6px}
+.gd-legend-item{display:flex;align-items:center;gap:6px;background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:5px 12px;font-size:10.5px;font-weight:600;color:var(--muted)}
+.gd-legend-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
+
+/* Tips */
+.gd-tips{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:8px;margin-bottom:6px}
+.gd-tip{background:var(--surface);border-radius:10px;padding:13px 14px;border-left:4px solid var(--accent);transition:transform .2s}
+.gd-tip:hover{transform:translateX(3px)}
+.gd-tip .gt-icon{font-size:20px;margin-bottom:6px;display:block}
+.gd-tip h4{font-size:12.5px;font-weight:800;color:var(--text);margin-bottom:4px}
+.gd-tip p{font-size:11px;color:var(--muted2);line-height:1.6}
+
+.gd-divider{border:none;border-top:1px solid var(--border);margin:8px 0 4px}
 .qr-bank-panel{background:linear-gradient(135deg,#f0fdf4,#dcfce7);border:2px solid var(--accent);border-radius:var(--r14);padding:14px;margin-bottom:12px;text-align:center;display:none;animation:fadeUp .2s ease}
 .dark .qr-bank-panel{background:rgba(22,163,74,.1)}
 .qr-bank-panel.show{display:block}
@@ -2264,6 +2346,335 @@ button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid 
   <button class="tab" data-sc="settings" onclick="sw('settings',this)" id="tab-settings">
     <span class="tab-icon">⚙️</span><span class="tab-label">Cài đặt</span>
   </button>
+  <button class="tab" data-sc="guide" onclick="sw('guide',this)" id="tab-guide">
+    <span class="tab-icon">📖</span><span class="tab-label">Hướng dẫn</span>
+  </button>
+</div>
+
+<!-- GUIDE -->
+<div class="screen" id="sc-guide">
+  <div class="guide-wrap">
+
+    <!-- HERO -->
+    <div class="guide-hero">
+      <div class="guide-hero-badge">☕ Hướng Dẫn Sử Dụng</div>
+      <h2>Quản Lý Quán<br><span>Cà Phê Thông Minh</span></h2>
+      <p>Toàn bộ tính năng — từ nhận bàn đến xuất báo cáo, tất cả trong một ứng dụng</p>
+      <div class="guide-hero-icons">
+        <div class="guide-hero-icon">🪑</div>
+        <div class="guide-hero-icon">📋</div>
+        <div class="guide-hero-icon">👨‍🍳</div>
+        <div class="guide-hero-icon">👤</div>
+        <div class="guide-hero-icon">📦</div>
+        <div class="guide-hero-icon">📊</div>
+        <div class="guide-hero-icon">⚙️</div>
+      </div>
+    </div>
+
+    <!-- 1. MENU TABS -->
+    <div class="gd-sec">
+      <div class="gd-sec-icon" style="background:rgba(200,150,76,.15)">🧭</div>
+      <div><h3>Thanh Menu Chính</h3><p>12 tab — chia 2 hàng trên điện thoại, cuộn ngang trên máy tính</p></div>
+    </div>
+    <div class="gd-tabs">
+      <div class="gd-tab-item"><span class="gti-icon">🪑</span><div class="gti-name">BÀN</div><div class="gti-desc">Xem & chọn bàn, trạng thái khách</div></div>
+      <div class="gd-tab-item"><span class="gti-icon">📋</span><div class="gti-name">ORDER</div><div class="gti-desc">Đơn đang làm & đã xong hôm nay</div></div>
+      <div class="gd-tab-item"><span class="gti-icon">👨‍🍳</span><div class="gti-name">BẾP</div><div class="gti-desc">Màn hình bếp riêng, bấm xong từng món</div></div>
+      <div class="gd-tab-item"><span class="gti-icon">👤</span><div class="gti-name">KHÁCH</div><div class="gti-desc">Hồ sơ khách, lịch sử, công nợ</div></div>
+      <div class="gd-tab-item"><span class="gti-icon">📦</span><div class="gti-name">KHO</div><div class="gti-desc">Tồn kho, cảnh báo hết hàng</div></div>
+      <div class="gd-tab-item"><span class="gti-icon">📥</span><div class="gti-name">NHẬP</div><div class="gti-desc">Phiếu nhập hàng, nhà cung cấp</div></div>
+      <div class="gd-tab-item"><span class="gti-icon">🍽</span><div class="gti-name">THỰC ĐƠN</div><div class="gti-desc">Thêm/sửa/ẩn món, phân danh mục</div></div>
+      <div class="gd-tab-item"><span class="gti-icon">💰</span><div class="gti-name">CÔNG NỢ</div><div class="gti-desc">Theo dõi & thu nợ khách</div></div>
+      <div class="gd-tab-item"><span class="gti-icon">📊</span><div class="gti-name">BÁO CÁO</div><div class="gti-desc">Doanh thu, biểu đồ, hóa đơn gần đây</div></div>
+      <div class="gd-tab-item"><span class="gti-icon">🪑</span><div class="gti-name">QUẢN LÝ BÀN</div><div class="gti-desc">Thêm/xóa bàn, khu vực, QR bàn</div></div>
+      <div class="gd-tab-item"><span class="gti-icon">⚙️</span><div class="gti-name">CÀI ĐẶT</div><div class="gti-desc">Thông tin quán, ngân hàng QR, nhân viên</div></div>
+      <div class="gd-tab-item"><span class="gti-icon">📖</span><div class="gti-name">HƯỚNG DẪN</div><div class="gti-desc">Bạn đang xem — sơ đồ toàn bộ app</div></div>
+    </div>
+
+    <hr class="gd-divider">
+
+    <!-- 2. QUY TRÌNH PHỤC VỤ -->
+    <div class="gd-sec">
+      <div class="gd-sec-icon" style="background:rgba(22,163,74,.15)">🔄</div>
+      <div><h3>Quy Trình Phục Vụ Khách</h3><p>6 bước từ lúc khách ngồi đến khi thanh toán xong</p></div>
+    </div>
+    <div class="gd-flow">
+      <div class="gd-step"><div class="gs-num">1</div><span class="gs-icon">🪑</span><div class="gs-name">Chọn Bàn</div><div class="gs-desc">Tab BÀN → bấm số bàn → bàn sáng lên</div></div>
+      <div class="gd-arrow">→</div>
+      <div class="gd-step"><div class="gs-num">2</div><span class="gs-icon">🍽</span><div class="gs-name">Chọn Món</div><div class="gs-desc">Tab THỰC ĐƠN hoặc giỏ hàng 🛒</div></div>
+      <div class="gd-arrow">→</div>
+      <div class="gd-step"><div class="gs-num">3</div><span class="gs-icon">🔔</span><div class="gs-name">Gửi Bếp</div><div class="gs-desc">Nhấn "Gửi bếp" → bàn chuyển cam</div></div>
+      <div class="gd-arrow">→</div>
+      <div class="gd-step"><div class="gs-num">4</div><span class="gs-icon">👨‍🍳</span><div class="gs-name">Bếp Làm</div><div class="gs-desc">Tab BẾP → bấm "Đã xong" khi xong</div></div>
+      <div class="gd-arrow">→</div>
+      <div class="gd-step"><div class="gs-num">5</div><span class="gs-icon">🧾</span><div class="gs-name">Hóa Đơn</div><div class="gs-desc">Xem bill → In hoặc Xuất PDF</div></div>
+      <div class="gd-arrow">→</div>
+      <div class="gd-step"><div class="gs-num">6</div><span class="gs-icon">💳</span><div class="gs-name">Thu Tiền</div><div class="gs-desc">TM / CK+QR / MoMo → bàn về trống</div></div>
+    </div>
+
+    <hr class="gd-divider">
+
+    <!-- 3. LUỒNG DỮ LIỆU -->
+    <div class="gd-sec">
+      <div class="gd-sec-icon" style="background:rgba(139,92,246,.15)">⚡</div>
+      <div><h3>Luồng Dữ Liệu Tự Động</h3><p>Các hành động kéo theo nhau — không cần nhập lại</p></div>
+    </div>
+    <div class="gd-workflow">
+      <div class="gd-wf-row">
+        <div class="gd-wf-col">
+          <div class="gd-wf-hdr"><span>🍽</span><b>Chọn Món</b></div>
+          <div class="gd-wf-items">
+            <div class="gd-wf-item"><span class="wi">🛒</span><span class="wt">Giỏ hàng cập nhật ngay</span></div>
+            <div class="gd-wf-item"><span class="wi">💵</span><span class="wt">Tổng tiền tự tính</span></div>
+            <div class="gd-wf-item"><span class="wi">🪑</span><span class="wt">Gắn với bàn đang chọn</span></div>
+          </div>
+        </div>
+        <div class="gd-wf-arrow">→</div>
+        <div class="gd-wf-col">
+          <div class="gd-wf-hdr"><span>🔔</span><b>Gửi Bếp</b></div>
+          <div class="gd-wf-items">
+            <div class="gd-wf-item"><span class="wi">📋</span><span class="wt">Tạo mã đơn tự động</span></div>
+            <div class="gd-wf-item"><span class="wi">🪑</span><span class="wt">Bàn → cam "Có khách"</span></div>
+            <div class="gd-wf-item"><span class="wi">👨‍🍳</span><span class="wt">Hiện ngay trên bếp</span></div>
+            <div class="gd-wf-item"><span class="wi">📦</span><span class="wt">Kho trừ nguyên liệu</span></div>
+          </div>
+        </div>
+        <div class="gd-wf-arrow">→</div>
+        <div class="gd-wf-col">
+          <div class="gd-wf-hdr"><span>✅</span><b>Bếp Xong</b></div>
+          <div class="gd-wf-items">
+            <div class="gd-wf-item"><span class="wi">🟢</span><span class="wt">Đơn → "Xong"</span></div>
+            <div class="gd-wf-item"><span class="wi">🔔</span><span class="wt">Thông báo thu ngân</span></div>
+            <div class="gd-wf-item"><span class="wi">🧾</span><span class="wt">Sẵn sàng in hóa đơn</span></div>
+          </div>
+        </div>
+        <div class="gd-wf-arrow">→</div>
+        <div class="gd-wf-col">
+          <div class="gd-wf-hdr"><span>💳</span><b>Thanh Toán</b></div>
+          <div class="gd-wf-items">
+            <div class="gd-wf-item"><span class="wi">📊</span><span class="wt">Doanh thu cộng vào báo cáo</span></div>
+            <div class="gd-wf-item"><span class="wi">🪑</span><span class="wt">Bàn → trống (xanh)</span></div>
+            <div class="gd-wf-item"><span class="wi">👤</span><span class="wt">Lịch sử khách cập nhật</span></div>
+            <div class="gd-wf-item"><span class="wi">🏆</span><span class="wt">Top món bán chạy cập nhật</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="gd-divider">
+
+    <!-- 4. CHI TIẾT TÍNH NĂNG (accordion) -->
+    <div class="gd-sec">
+      <div class="gd-sec-icon" style="background:rgba(59,130,246,.15)">🗂</div>
+      <div><h3>Chi Tiết Từng Tính Năng</h3><p>Bấm vào từng thẻ để xem chi tiết cách dùng</p></div>
+    </div>
+    <div class="gd-feat-grid">
+
+      <div class="gd-feat" onclick="toggleGdFeat(this)">
+        <div class="gd-feat-hdr">
+          <div class="gd-feat-icon" style="background:rgba(200,150,76,.15)">🪑</div>
+          <h4>Quản Lý Bàn</h4>
+          <span class="gf-badge" style="background:rgba(249,115,22,.15);color:#f97316">Tab BÀN</span>
+          <span class="gf-arrow">›</span>
+        </div>
+        <div class="gd-feat-body">
+          <ul class="gd-feat-list">
+            <li>Bàn <b style="color:var(--accent)">XANH</b> = trống — bàn <b style="color:var(--orange)">CAM</b> = có khách</li>
+            <li>Bấm vào bàn để chọn → giỏ hàng gắn với bàn đó</li>
+            <li>Thẻ bàn hiển thị: tên khách, số món, tổng tiền</li>
+            <li>Nút 🥡 <b>Mua đem về</b> — tạo đơn mang đi không gắn bàn</li>
+            <li>Khu A – Trong / Khu B – Ngoài chia vùng rõ ràng</li>
+            <li>Bàn hiện nhãn ĐỎ "Nợ" nếu khách còn công nợ</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="gd-feat" onclick="toggleGdFeat(this)">
+        <div class="gd-feat-hdr">
+          <div class="gd-feat-icon" style="background:rgba(249,115,22,.15)">📋</div>
+          <h4>Đơn Hàng</h4>
+          <span class="gf-badge" style="background:rgba(249,115,22,.15);color:#f97316">Tab ORDER</span>
+          <span class="gf-arrow">›</span>
+        </div>
+        <div class="gd-feat-body">
+          <ul class="gd-feat-list">
+            <li>Tab <b>Đang làm</b>: đơn pending/done chờ giao</li>
+            <li>Tab <b>Hôm nay</b>: tất cả đơn đã thanh toán</li>
+            <li>Bấm vào đơn → xem chi tiết, in hóa đơn, thu tiền</li>
+            <li>Trạng thái: 🟡 Chờ → 🟢 Xong → ✅ Đã thanh toán</li>
+            <li>Có thể thêm món vào đơn đang chạy</li>
+            <li>Hủy đơn nếu khách đổi ý (trước khi bếp làm)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="gd-feat" onclick="toggleGdFeat(this)">
+        <div class="gd-feat-hdr">
+          <div class="gd-feat-icon" style="background:rgba(239,68,68,.15)">👨‍🍳</div>
+          <h4>Màn Hình Bếp</h4>
+          <span class="gf-badge" style="background:rgba(239,68,68,.15);color:#ef4444">Tab BẾP</span>
+          <span class="gf-arrow">›</span>
+        </div>
+        <div class="gd-feat-body">
+          <ul class="gd-feat-list">
+            <li>Hiện tất cả order đang chờ theo thứ tự thời gian</li>
+            <li>Bấm <b>"Đã xong"</b> → đơn chuyển sang trạng thái Done</li>
+            <li>Chuông 🔔 trên topbar đổ đỏ khi có order mới</li>
+            <li>Tối ưu cho màn hình bếp riêng / tablet</li>
+            <li>Hiển thị ghi chú đặc biệt từng món (ít đá, không đường…)</li>
+            <li>Số bàn hiển thị to, dễ đọc từ xa</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="gd-feat" onclick="toggleGdFeat(this)">
+        <div class="gd-feat-hdr">
+          <div class="gd-feat-icon" style="background:rgba(139,92,246,.15)">👤</div>
+          <h4>Quản Lý Khách</h4>
+          <span class="gf-badge" style="background:rgba(139,92,246,.15);color:#8b5cf6">Tab KHÁCH</span>
+          <span class="gf-arrow">›</span>
+        </div>
+        <div class="gd-feat-body">
+          <ul class="gd-feat-list">
+            <li>Thêm khách: tên, SĐT, email, ghi chú riêng</li>
+            <li>Gắn khách với bàn để theo dõi lịch sử tiêu dùng</li>
+            <li>Xem tổng số lần ghé, tổng tiền đã chi</li>
+            <li>Tìm kiếm nhanh theo tên hoặc SĐT</li>
+            <li>Xóa khách khi cần (sẽ xóa liên kết với bàn)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="gd-feat" onclick="toggleGdFeat(this)">
+        <div class="gd-feat-hdr">
+          <div class="gd-feat-icon" style="background:rgba(59,130,246,.15)">📦</div>
+          <h4>Kho Nguyên Liệu</h4>
+          <span class="gf-badge" style="background:rgba(59,130,246,.15);color:#3b82f6">Tab KHO</span>
+          <span class="gf-arrow">›</span>
+        </div>
+        <div class="gd-feat-body">
+          <ul class="gd-feat-list">
+            <li>Danh sách nguyên liệu: tên, đơn vị, số lượng tồn</li>
+            <li>Cảnh báo đỏ 🔴 khi tồn kho dưới mức tối thiểu</li>
+            <li>Mỗi món thực đơn liên kết với nguyên liệu tương ứng</li>
+            <li>Bán hàng → kho tự động trừ nguyên liệu</li>
+            <li>Chỉnh định mức cảnh báo theo nhu cầu quán</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="gd-feat" onclick="toggleGdFeat(this)">
+        <div class="gd-feat-hdr">
+          <div class="gd-feat-icon" style="background:rgba(22,163,74,.15)">💳</div>
+          <h4>Thanh Toán</h4>
+          <span class="gf-badge" style="background:rgba(22,163,74,.15);color:#16a34a">Thu Tiền</span>
+          <span class="gf-arrow">›</span>
+        </div>
+        <div class="gd-feat-body">
+          <ul class="gd-feat-list">
+            <li>3 hình thức: 💵 Tiền mặt / 🏦 Chuyển khoản / 🟣 MoMo</li>
+            <li>Chuyển khoản → hiện ngay QR với số tiền chính xác</li>
+            <li>Giảm giá: nhập % hoặc số tiền, có nút preset nhanh</li>
+            <li>Tính tiền thừa tự động khi nhập tiền khách đưa</li>
+            <li>Ghi nợ nếu khách chưa đủ tiền</li>
+            <li>🧾 Xem hóa đơn → In hoặc 📄 Xuất PDF</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="gd-feat" onclick="toggleGdFeat(this)">
+        <div class="gd-feat-hdr">
+          <div class="gd-feat-icon" style="background:rgba(239,68,68,.15)">💰</div>
+          <h4>Công Nợ</h4>
+          <span class="gf-badge" style="background:rgba(239,68,68,.15);color:#ef4444">Tab CÔNG NỢ</span>
+          <span class="gf-arrow">›</span>
+        </div>
+        <div class="gd-feat-body">
+          <ul class="gd-feat-list">
+            <li>Danh sách khách đang nợ và số tiền cụ thể</li>
+            <li>Bấm "Thu nợ" → nhập số tiền nhận được</li>
+            <li>Lịch sử từng lần trả nợ có ngày giờ đầy đủ</li>
+            <li>Tổng nợ toàn bộ hiển thị trên trang báo cáo</li>
+            <li>Thẻ bàn hiện nhãn "Nợ" nhắc nhở khi khách quay lại</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="gd-feat" onclick="toggleGdFeat(this)">
+        <div class="gd-feat-hdr">
+          <div class="gd-feat-icon" style="background:rgba(59,130,246,.15)">📊</div>
+          <h4>Báo Cáo</h4>
+          <span class="gf-badge" style="background:rgba(59,130,246,.15);color:#3b82f6">Tab BÁO CÁO</span>
+          <span class="gf-arrow">›</span>
+        </div>
+        <div class="gd-feat-body">
+          <ul class="gd-feat-list">
+            <li>Doanh thu hôm nay / tổng số đơn / lợi nhuận ước tính</li>
+            <li>Biểu đồ cột doanh thu 7 ngày gần nhất</li>
+            <li>Top 6 món bán chạy nhất có thanh tỷ lệ trực quan</li>
+            <li>Danh sách hóa đơn gần đây — xem & xóa từng cái</li>
+            <li>Xóa hóa đơn → doanh thu tự động điều chỉnh</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="gd-feat" onclick="toggleGdFeat(this)">
+        <div class="gd-feat-hdr">
+          <div class="gd-feat-icon" style="background:rgba(92,51,23,.3)">⚙️</div>
+          <h4>Cài Đặt</h4>
+          <span class="gf-badge" style="background:rgba(200,150,76,.15);color:#c8964c">Tab CÀI ĐẶT</span>
+          <span class="gf-arrow">›</span>
+        </div>
+        <div class="gd-feat-body">
+          <ul class="gd-feat-list">
+            <li>Thông tin quán: tên, địa chỉ, SĐT, logo, slogan</li>
+            <li>Tài khoản ngân hàng để tạo QR chuyển khoản tự động</li>
+            <li>Quản lý nhân viên và tên mặc định trên hóa đơn</li>
+            <li>QR code từng bàn → in dán bàn cho khách quét</li>
+            <li>🌙 Bật/tắt Dark Mode theo môi trường ánh sáng</li>
+            <li>☁️ Kết nối Firebase để đồng bộ đám mây</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <hr class="gd-divider">
+
+    <!-- 5. MÀU SẮC TRẠNG THÁI -->
+    <div class="gd-sec">
+      <div class="gd-sec-icon" style="background:rgba(22,163,74,.15)">🎨</div>
+      <div><h3>Màu Sắc & Trạng Thái</h3><p>Nhìn màu biết ngay bàn đang ở trạng thái nào</p></div>
+    </div>
+    <div class="gd-legend">
+      <div class="gd-legend-item"><div class="gd-legend-dot" style="background:#4ade80"></div>🟢 Bàn Trống</div>
+      <div class="gd-legend-item"><div class="gd-legend-dot" style="background:#fb923c"></div>🟠 Có Khách</div>
+      <div class="gd-legend-item"><div class="gd-legend-dot" style="background:#f87171"></div>🔴 Cảnh báo Nợ / Hết kho</div>
+      <div class="gd-legend-item"><div class="gd-legend-dot" style="background:#a78bfa"></div>🟣 Đang Chọn</div>
+      <div class="gd-legend-item"><div class="gd-legend-dot" style="background:#fbbf24"></div>🟡 Chờ Bếp</div>
+      <div class="gd-legend-item"><div class="gd-legend-dot" style="background:#34d399"></div>✅ Bếp Xong</div>
+      <div class="gd-legend-item"><div class="gd-legend-dot" style="background:#6b7280"></div>⚫ Đã Thanh Toán</div>
+    </div>
+
+    <hr class="gd-divider">
+
+    <!-- 6. MẸO SỬ DỤNG -->
+    <div class="gd-sec">
+      <div class="gd-sec-icon" style="background:rgba(200,150,76,.15)">💡</div>
+      <div><h3>Mẹo Sử Dụng Hiệu Quả</h3><p>Thủ thuật giúp phục vụ nhanh hơn</p></div>
+    </div>
+    <div class="gd-tips">
+      <div class="gd-tip"><span class="gt-icon">🏦</span><h4>Cài ngân hàng trước</h4><p>⚙️ Cài đặt → Thanh toán QR → nhập mã ngân hàng + số TK. QR sẽ tự điền số tiền chính xác khi thu.</p></div>
+      <div class="gd-tip"><span class="gt-icon">🪑</span><h4>Chọn bàn trước khi order</h4><p>Luôn bấm chọn bàn ở Tab BÀN trước khi chọn món, tránh nhầm bàn hoặc gửi bếp sai vị trí.</p></div>
+      <div class="gd-tip"><span class="gt-icon">👨‍🍳</span><h4>Thiết bị riêng cho bếp</h4><p>Mở app trên tablet đặt ở quầy bếp, để Tab BẾP luôn mở. Không cần chạy ra báo nhau nữa.</p></div>
+      <div class="gd-tip"><span class="gt-icon">📦</span><h4>Đặt định mức kho</h4><p>Cài mức tối thiểu cho nguyên liệu quan trọng — app cảnh báo đỏ khi gần hết để nhập kịp thời.</p></div>
+      <div class="gd-tip"><span class="gt-icon">🏷</span><h4>Dùng voucher preset</h4><p>Màn hình thanh toán có nút -10%, -15%, -20%, -50k, -100k. Bấm 1 cái xong, không cần nhập tay.</p></div>
+      <div class="gd-tip"><span class="gt-icon">🥡</span><h4>Đơn mang về</h4><p>Bấm "🥡 Mua đem về" trên Tab BÀN để tạo đơn không gắn bàn — phù hợp khách take-away.</p></div>
+      <div class="gd-tip"><span class="gt-icon">☁️</span><h4>Backup với Firebase</h4><p>Kết nối Firebase để dữ liệu lên cloud — không mất khi xóa cache hoặc đổi thiết bị mới.</p></div>
+      <div class="gd-tip"><span class="gt-icon">🌙</span><h4>Dark Mode ban đêm</h4><p>Bật Dark Mode ở ⚙️ Cài đặt khi làm ban đêm hoặc môi trường ánh sáng yếu — bảo vệ mắt.</p></div>
+    </div>
+
+  </div>
 </div>
 
 <!-- DASHBOARD (ẩn - dùng trong tables screen) -->
@@ -3640,8 +4051,15 @@ function sw(name,el){
   document.querySelectorAll('.tab').forEach(t=>t.classList.remove('on'));
   document.getElementById('sc-'+name).classList.add('on');
   if(el) el.classList.add('on');
-  const renderers={tables:renderTables,menu:()=>{renderCats();renderMenu();},orders:renderOrders,customers:renderCusts,nhap:renderNhap,congno:renderCongNo,report:()=>{if(_rpTab==='nhap')renderNhapReport();else renderReport();},settings:renderSettings,kho:renderKho,menuconfig:renderMenuConfig,manage:renderManage};
+  const renderers={tables:renderTables,menu:()=>{renderCats();renderMenu();},orders:renderOrders,customers:renderCusts,nhap:renderNhap,congno:renderCongNo,report:()=>{if(_rpTab==='nhap')renderNhapReport();else renderReport();},settings:renderSettings,kho:renderKho,menuconfig:renderMenuConfig,manage:renderManage,guide:()=>{}};
   if(renderers[name]) renderers[name]();
+}
+
+function toggleGdFeat(card){
+  const isOpen=card.classList.contains('open');
+  // Close all others
+  document.querySelectorAll('.gd-feat.open').forEach(c=>c.classList.remove('open'));
+  if(!isOpen)card.classList.add('open');
 }
 
 // ══════════════════════════════════════════════
@@ -6636,9 +7054,9 @@ function renderPeakHour(){
    admin:    toàn bộ
 */
 const ROLE_TABS={
-  nhanvien:['tables','menu','orders','customers','kho','congno'],
-  quanly:  ['tables','menu','orders','customers','kho','congno','nhap','report'],
-  admin:   ['tables','menu','orders','customers','kho','congno','nhap','report','menuconfig','manage','settings']
+  nhanvien:['tables','menu','orders','customers','kho','congno','guide'],
+  quanly:  ['tables','menu','orders','customers','kho','congno','nhap','report','guide'],
+  admin:   ['tables','menu','orders','customers','kho','congno','nhap','report','menuconfig','manage','settings','guide']
 };
 
 let _session={
