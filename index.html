@@ -1158,6 +1158,42 @@ select.minp{-webkit-appearance:none;appearance:none}
 .danger-btn:hover{background:var(--red);color:#fff;border-color:var(--red);transform:var(--lift);box-shadow:0 4px 14px rgba(239,68,68,.35)}
 .dark .danger-btn{background:rgba(239,68,68,.12);border-color:rgba(239,68,68,.28)}
 
+/* ─── ONBOARDING ─── */
+.ob-slide{text-align:center;padding:6px 0 0}
+.ob-slide-icon{font-size:56px;margin-bottom:14px;line-height:1}
+.ob-slide-title{font-family:'Playfair Display',serif;font-size:20px;font-weight:900;color:var(--text);margin-bottom:8px}
+.ob-slide-desc{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:4px}
+.ob-slide-tips{background:var(--accent-light);border-radius:10px;padding:12px 14px;margin-top:12px;text-align:left}
+.ob-slide-tips li{font-size:12px;color:var(--accent);font-weight:600;margin-bottom:5px;padding-left:4px;line-height:1.5}
+.ob-slide-tips li::marker{content:'✓  '}
+.ob-dot{width:8px;height:8px;border-radius:50%;background:var(--border);transition:all .3s;cursor:pointer}
+.ob-dot.on{background:var(--accent);width:20px;border-radius:4px}
+/* ─── HELP CONTENT ─── */
+.help-section{padding:0 18px 6px}
+.help-section-hd{display:flex;align-items:center;gap:8px;padding:12px 18px 8px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.7px;color:var(--muted2);background:var(--bg);border-top:1px solid var(--border);position:sticky;top:0;z-index:1}
+.help-item{display:flex;gap:12px;padding:10px 0;border-bottom:1px solid var(--border2)}
+.help-item:last-child{border-bottom:none}
+.help-item-icon{font-size:22px;flex-shrink:0;width:36px;text-align:center}
+.help-item-body{}
+.help-item-title{font-size:13px;font-weight:700;color:var(--text);margin-bottom:3px;font-family:'Lora',serif}
+.help-item-desc{font-size:11px;color:var(--muted);line-height:1.55}
+.help-tip{display:inline-block;background:var(--accent-light);color:var(--accent);font-size:10px;font-weight:700;border-radius:4px;padding:2px 7px;margin-top:5px}
+/* ─── DELIVERY APP BADGES ─── */
+.app-badge{display:inline-flex;align-items:center;gap:4px;border-radius:4px;padding:3px 8px;font-size:10px;font-weight:800;letter-spacing:.2px;text-transform:uppercase;font-family:'Lora',serif;flex-shrink:0;white-space:nowrap}
+.app-badge.grab{background:#00b14f;color:#fff}
+.app-badge.be{background:#f9d300;color:#1a1a1a}
+.app-badge.shopee{background:#ee4d2d;color:#fff}
+.app-badge.xanh{background:#1a73e8;color:#fff}
+.app-badge.baemin{background:#3ac5a2;color:#fff}
+.app-badge.loship{background:#e31837;color:#fff}
+.app-badge.other{background:#6b3fa0;color:#fff}
+.app-badge.direct{background:#8b4513;color:#FFF8DC}
+.app-select-btn{border:2px solid var(--border);border-radius:10px;padding:9px 6px;text-align:center;cursor:pointer;transition:all .18s;background:var(--surface);display:flex;flex-direction:column;align-items:center;gap:6px}
+.app-select-btn:active{transform:scale(.95)}
+.app-select-btn.selected{border-color:var(--accent);background:var(--accent-light);box-shadow:var(--glow-green)}
+.app-logo-tile{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:900;font-family:'Lora',serif;letter-spacing:-1px;box-shadow:0 2px 6px rgba(0,0,0,.18);flex-shrink:0}
+.app-select-btn .app-name{font-size:10px;font-weight:700;color:var(--text);font-family:'Lora',serif;line-height:1.2}
+.app-select-btn.selected .app-name{color:var(--accent)}
 /* ─── FOCUS RING ─── */
 button:focus-visible,input:focus-visible,select:focus-visible{outline:2.5px solid var(--accent);outline-offset:2px}
 
@@ -1166,8 +1202,8 @@ button:focus-visible,input:focus-visible,select:focus-visible{outline:2.5px soli
 
 /* ─── WRAPPER ─── */
 .app-shell{width:100%;max-width:var(--app-max,480px);margin:0 auto;position:relative;min-height:100vh;display:flex;flex-direction:column}
-@media(min-width:768px){:root{--app-max:640px}.tbl-grid{grid-template-columns:repeat(4,1fr)!important}.menu-grid{grid-template-columns:repeat(3,1fr)!important}.rc-grid{grid-template-columns:repeat(4,1fr)!important}}
-@media(min-width:1100px){:root{--app-max:860px}body{background:#e2e8f0}body.dark{background:#020617}.app-shell{box-shadow:var(--shadow-lg);border-radius:16px;overflow:hidden;margin:20px auto}.tbl-grid{grid-template-columns:repeat(5,1fr)!important}.menu-grid{grid-template-columns:repeat(4,1fr)!important}.rc-grid{grid-template-columns:repeat(4,1fr)!important}.cart-bar{border-radius:0 0 16px 16px}}
+@media(min-width:768px){:root{--app-max:640px}.tbl-grid{grid-template-columns:repeat(3,1fr)!important}.menu-grid{grid-template-columns:repeat(3,1fr)!important}.rc-grid{grid-template-columns:repeat(4,1fr)!important}}
+@media(min-width:1100px){:root{--app-max:860px}body{background:#e2e8f0}body.dark{background:#020617}.app-shell{box-shadow:var(--shadow-lg);border-radius:16px;overflow:hidden;margin:20px auto}.tbl-grid{grid-template-columns:repeat(4,1fr)!important}.menu-grid{grid-template-columns:repeat(4,1fr)!important}.rc-grid{grid-template-columns:repeat(4,1fr)!important}.cart-bar{border-radius:0 0 16px 16px}}
 
 /* ─── TOPBAR CART PANEL ─── */
 .cart-panel{position:fixed;top:calc(var(--topbar-h) + 6px);right:10px;width:min(320px,calc(100vw - 20px));background:var(--surface);border-radius:var(--r14);box-shadow:var(--shadow-lg);z-index:300;border:1px solid var(--border);display:none}
@@ -1204,23 +1240,55 @@ button:focus-visible,input:focus-visible,select:focus-visible{outline:2.5px soli
 .zone-actions{padding:10px 12px 4px;display:flex;gap:8px}
 .takeaway-btn{background:linear-gradient(135deg,#f97316,#ea580c);color:#fff;border:none;border-radius:var(--r10);padding:10px 18px;font-size:12px;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:6px;box-shadow:0 2px 8px rgba(249,115,22,.28);transition:opacity .15s}
 .takeaway-btn:active{opacity:.85}
-.zone-hd{padding:10px 14px 4px;display:flex;align-items:center;gap:7px}
-.zone-dot{width:7px;height:7px;border-radius:50%;background:var(--accent);flex-shrink:0}
-.zone-txt{font-size:9px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.8px}
-.tbl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:0 12px 10px}
-.tc{background:var(--surface);border-radius:var(--r14);padding:11px 6px 9px;text-align:center;cursor:pointer;border:2px solid var(--border);position:relative;transition:all .18s;box-shadow:var(--shadow-sm)}
-.tc:active{transform:scale(.94)}
-.tc.occ{background:linear-gradient(135deg,#fffbf0,#fff8ee);border-color:var(--orange);box-shadow:0 2px 10px rgba(249,115,22,.14)}
-.dark .tc.occ{background:linear-gradient(135deg,#1c1108,#1a1005)}
-.tc.sel{border-color:var(--accent);background:var(--accent-light);box-shadow:0 2px 10px rgba(22,163,74,.18)}
-.dark .tc.sel{background:rgba(22,163,74,.14)}
-.tc.takeaway{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#f97316;box-shadow:0 2px 10px rgba(249,115,22,.18)}
-.dark .tc.takeaway{background:linear-gradient(135deg,#1c1108,#1a1005)}
-.tc.takeaway .tc-st,.tc.takeaway .tc-pulse{color:#f97316}
-.tc.takeaway .tc-pulse{background:#f97316;animation:blink 1.5s infinite}
-.tc-pulse{position:absolute;top:6px;right:6px;width:7px;height:7px;border-radius:50%}
-.tc.free .tc-pulse{background:#4ade80}
-.tc.occ .tc-pulse{background:var(--orange);animation:blink 1.5s infinite}
+.zone-hd{padding:14px 14px 6px;display:flex;align-items:center;gap:8px}
+.zone-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);flex-shrink:0}
+.zone-txt{font-size:10px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:1px;font-family:'Lora',serif}
+.zone-free-cnt{margin-left:auto;font-size:9px;font-weight:700;color:var(--accent);background:var(--accent-light);border-radius:20px;padding:2px 9px}
+.tbl-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;padding:0 12px 12px}
+/* ── Restaurant-style table card ── */
+.tc{background:var(--surface);border-radius:14px;cursor:pointer;border:2px solid var(--border);position:relative;transition:all .2s;box-shadow:0 2px 8px rgba(0,0,0,.07);overflow:hidden;display:flex;flex-direction:column;min-height:118px}
+.tc:active{transform:scale(.96)}
+/* Coloured top stripe — status indicator */
+.tc-stripe{height:5px;width:100%;flex-shrink:0;background:#d1fae5;transition:background .2s}
+.tc.occ .tc-stripe{background:linear-gradient(90deg,#f97316,#fb923c)}
+.tc.takeaway .tc-stripe{background:linear-gradient(90deg,#7c3aed,#a78bfa)}
+.tc.paying .tc-stripe{background:linear-gradient(90deg,#e11d48,#f43f5e);animation:stripe-pulse 1.2s infinite}
+.tc.sel .tc-stripe{background:linear-gradient(90deg,var(--accent),#4ade80)}
+@keyframes stripe-pulse{0%,100%{opacity:1}50%{opacity:.55}}
+/* Card body */
+.tc-body{padding:9px 10px 9px;flex:1;display:flex;flex-direction:column;gap:2px}
+/* Status states */
+.tc.occ{background:linear-gradient(170deg,#fffdf7,#fff8ed);border-color:#fed7aa}
+.dark .tc.occ{background:linear-gradient(170deg,#1e1005,#1c0f04);border-color:#78350f}
+.tc.sel{border-color:var(--accent);background:linear-gradient(170deg,#f0fdf4,#dcfce7);box-shadow:0 0 0 3px rgba(22,163,74,.12),0 4px 16px rgba(22,163,74,.15)}
+.dark .tc.sel{background:rgba(22,163,74,.1);border-color:var(--accent)}
+.tc.takeaway{background:linear-gradient(170deg,#faf5ff,#ede9fe);border-color:#c4b5fd}
+.dark .tc.takeaway{background:linear-gradient(170deg,#160b2e,#110826);border-color:#7c3aed}
+.tc.paying{background:linear-gradient(170deg,#fff1f2,#ffe4e6);border-color:#fca5a5}
+.dark .tc.paying{background:linear-gradient(170deg,#1f0812,#1a060e);border-color:#be123c}
+/* Table number header row */
+.tc-head{display:flex;align-items:center;justify-content:space-between}
+.tc-num{font-size:26px;font-weight:900;color:var(--text);line-height:1;font-family:'Playfair Display',serif;letter-spacing:-1px}
+.tc-badge{font-size:9px;font-weight:800;border-radius:5px;padding:2px 7px;letter-spacing:.2px;text-transform:uppercase;font-family:'Lora',serif}
+.tc.free .tc-badge{background:#dcfce7;color:#15803d}
+.tc.occ .tc-badge{background:#ffedd5;color:#c2410c}
+.tc.takeaway .tc-badge{background:#ede9fe;color:#6d28d9}
+.tc.paying .tc-badge{background:#ffe4e6;color:#be123c}
+.tc.sel .tc-badge{background:#bbf7d0;color:#15803d}
+/* Chairs row */
+.tc-chairs{display:flex;gap:3px;margin:4px 0 2px;flex-wrap:wrap}
+.tc-chair{width:10px;height:10px;border-radius:2px;background:var(--border);transition:background .2s}
+.tc.occ .tc-chair.used,.tc.sel .tc-chair.used{background:#f97316}
+.tc.takeaway .tc-chair.used{background:#7c3aed}
+.tc.paying .tc-chair.used{background:#e11d48}
+.tc.free .tc-chair.used{background:#86efac}
+/* Info rows */
+.tc-info{font-size:10px;color:var(--muted);display:flex;align-items:center;gap:4px;line-height:1.3}
+.tc-info b{color:var(--text);font-weight:700}
+.tc-info.amt{color:var(--accent);font-weight:800;font-size:12px;font-family:'Lora',serif}
+.tc.occ .tc-info.amt{color:#c2410c}
+.tc-dur{position:absolute;top:11px;right:10px;font-size:9px;font-weight:700;color:var(--muted2);background:var(--bg);border-radius:4px;padding:1px 5px}
+.tc-pulse{display:none}
 @keyframes blink{0%,100%{box-shadow:0 0 0 0 rgba(249,115,22,.5)}50%{box-shadow:0 0 0 5px rgba(249,115,22,0)}}
 .tc-num{font-size:20px;font-weight:900;color:var(--text);line-height:1}
 .tc-st{font-size:8px;font-weight:700;margin-top:3px;text-transform:uppercase;letter-spacing:.3px}
@@ -2733,6 +2801,19 @@ button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid 
       ✅ Đã xong <span class="ord-tab-badge done" id="ord-done-cnt">0</span>
     </button>
   </div>
+  <!-- Filter bar by delivery app -->
+  <div id="ord-app-filter-bar" style="display:flex;gap:6px;padding:7px 12px;overflow-x:auto;background:var(--surface);border-bottom:1px solid var(--border);scrollbar-width:none">
+    <button class="cpill on" id="app-filter-all" onclick="setAppFilter('all',this)">Tất cả</button>
+    <button class="cpill" onclick="setAppFilter('grab',this)" style="display:flex;align-items:center;gap:4px"><span style="background:#00b14f;color:#fff;border-radius:3px;padding:0 4px;font-size:9px;font-weight:900">G</span>Grab</button>
+    <button class="cpill" onclick="setAppFilter('shopee',this)" style="display:flex;align-items:center;gap:4px"><span style="background:#ee4d2d;color:#fff;border-radius:3px;padding:0 4px;font-size:9px;font-weight:900">SF</span>Shopee</button>
+    <button class="cpill" onclick="setAppFilter('be',this)" style="display:flex;align-items:center;gap:4px"><span style="background:#f9d300;color:#1a1a1a;border-radius:3px;padding:0 4px;font-size:9px;font-weight:900">be</span>Be</button>
+    <button class="cpill" onclick="setAppFilter('baemin',this)" style="display:flex;align-items:center;gap:4px"><span style="background:#3ac5a2;color:#fff;border-radius:3px;padding:0 4px;font-size:9px;font-weight:900">B</span>Baemin</button>
+    <button class="cpill" onclick="setAppFilter('xanh',this)" style="display:flex;align-items:center;gap:4px"><span style="background:#1a73e8;color:#fff;border-radius:3px;padding:0 4px;font-size:9px;font-weight:900">XSM</span>Xanh</button>
+    <button class="cpill" onclick="setAppFilter('loship',this)" style="display:flex;align-items:center;gap:4px"><span style="background:#e31837;color:#fff;border-radius:3px;padding:0 4px;font-size:9px;font-weight:900">L</span>Loship</button>
+    <button class="cpill" onclick="setAppFilter('direct',this)">📞 Trực tiếp</button>
+    <button class="cpill" onclick="setAppFilter('other',this)">📦 Khác</button>
+    <button class="cpill" onclick="setAppFilter('table',this)">🪑 Bàn</button>
+  </div>
   <div id="olist-active" class="olist"></div>
   <div id="olist-done" class="olist" style="display:none"></div>
 </div>
@@ -2907,6 +2988,42 @@ button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid 
       <div class="color-swatches" id="color-swatches"></div>
     </div>
 
+    <div class="sec-hd">Giọng đọc thông báo</div>
+    <div class="setting-group">
+      <div class="setting-group-hd">🔊 Text-to-Speech khi có đơn</div>
+      <div class="setting-row">
+        <div class="setting-icon">🔔</div>
+        <div class="setting-label">Bật giọng đọc</div>
+        <label class="toggle-wrap">
+          <input type="checkbox" class="toggle-inp" id="tts-toggle" onchange="saveTTSSettings()">
+          <span class="toggle-track"></span>
+        </label>
+      </div>
+      <div style="padding:0 16px 14px">
+        <div class="flbl" style="margin-top:10px">Chọn giọng đọc</div>
+        <select class="finp" id="tts-voice-sel" onchange="saveTTSSettings()" style="width:100%;margin-bottom:10px">
+          <option value="">-- Đang tải giọng... --</option>
+        </select>
+        <div class="flbl">Tốc độ đọc</div>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+          <input type="range" id="tts-rate" min="0.5" max="2" step="0.1" value="1" style="flex:1" oninput="document.getElementById('tts-rate-val').textContent=this.value+'x';saveTTSSettings()" />
+          <span id="tts-rate-val" style="font-size:12px;font-weight:700;color:var(--accent);min-width:30px">1x</span>
+        </div>
+        <div class="flbl">Âm lượng</div>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+          <input type="range" id="tts-vol" min="0" max="1" step="0.1" value="1" style="flex:1" oninput="document.getElementById('tts-vol-val').textContent=Math.round(this.value*100)+'%';saveTTSSettings()" />
+          <span id="tts-vol-val" style="font-size:12px;font-weight:700;color:var(--accent);min-width:35px">100%</span>
+        </div>
+        <div class="flbl">Nội dung đọc khi có đơn mới</div>
+        <input class="finp" id="tts-msg" placeholder="VD: Có đơn mới bàn {table}" value="Có đơn mới bàn {table}" style="margin-bottom:8px" oninput="saveTTSSettings()" />
+        <div style="font-size:10px;color:var(--muted);font-style:italic;margin-bottom:10px">{table} = số bàn · {total} = tiền · {items} = số món · {cust} = tên khách</div>
+        <div style="display:flex;gap:8px">
+          <button onclick="previewTTS()" style="flex:1;background:var(--accent-grd);color:#FFF8DC;border:none;border-radius:4px;padding:9px;font-size:11px;font-weight:700;cursor:pointer;font-family:'Lora',serif;text-transform:uppercase;box-shadow:0 2px 0 #4A2000">▶ Thử giọng</button>
+          <button onclick="stopTTS()" style="flex:1;background:var(--red-l);color:var(--red);border:1.5px solid #C4A882;border-radius:4px;padding:9px;font-size:11px;font-weight:700;cursor:pointer;font-family:'Lora',serif;text-transform:uppercase">■ Dừng</button>
+        </div>
+      </div>
+    </div>
+
     <div class="sec-hd">Bàn & Khu vực</div>
     <div class="setting-group">
       <div class="setting-group-hd">🪑 Số bàn & khu</div>
@@ -3050,6 +3167,59 @@ button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid 
         </div>
       </div>
       <button class="danger-btn" onclick="resetAll()">🗑 Xoá toàn bộ dữ liệu (Reset)</button>
+    </div>
+
+    <div class="sec-hd">Hướng dẫn sử dụng</div>
+    <div class="setting-group">
+      <div class="setting-group-hd">📖 Tài liệu & Trợ giúp</div>
+      <div class="setting-row" onclick="openOverlay('ov-help')">
+        <div class="setting-icon">📚</div>
+        <div class="setting-label">Xem hướng dẫn đầy đủ</div>
+        <div class="setting-arrow">›</div>
+      </div>
+      <div class="setting-row" onclick="startOnboarding()">
+        <div class="setting-icon">🎓</div>
+        <div class="setting-label">Xem lại hướng dẫn nhanh (Onboarding)</div>
+        <div class="setting-arrow">›</div>
+      </div>
+      <div class="setting-row">
+        <div class="setting-icon">ℹ️</div>
+        <div class="setting-label">Phiên bản ứng dụng</div>
+        <div class="setting-value">206 POS v3.0</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── ONBOARDING ─── -->
+<div id="ov-onboard" style="position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.85);display:none;align-items:flex-end;justify-content:center;backdrop-filter:blur(4px)">
+  <div style="width:100%;max-width:var(--app-max);background:var(--surface);border-radius:24px 24px 0 0;padding:0 0 32px;overflow:hidden;position:relative">
+    <!-- Progress bar -->
+    <div style="height:3px;background:var(--border)"><div id="ob-progress" style="height:100%;background:var(--accent-grd);transition:width .4s;width:0%"></div></div>
+    <div style="padding:20px 22px 0">
+      <!-- Slide content -->
+      <div id="ob-slides"></div>
+      <!-- Dots -->
+      <div id="ob-dots" style="display:flex;justify-content:center;gap:7px;margin:18px 0 14px"></div>
+      <!-- Buttons -->
+      <div style="display:flex;gap:10px">
+        <button id="ob-skip" onclick="skipOnboarding()" style="flex:1;padding:11px;border:1.5px solid var(--border);border-radius:8px;background:var(--surface);color:var(--muted);font-size:12px;font-weight:700;cursor:pointer;font-family:'Lora',serif">Bỏ qua</button>
+        <button id="ob-next" onclick="nextOnboardSlide()" style="flex:2;padding:11px;border:none;border-radius:8px;background:var(--accent-grd);color:#FFF8DC;font-size:13px;font-weight:800;cursor:pointer;font-family:'Lora',serif;box-shadow:0 2px 0 #2d6a4f">Tiếp theo →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── HELP OVERLAY ─── -->
+<div class="overlay" id="ov-help">
+  <div class="sheet" style="max-height:92vh;padding:0 0 24px">
+    <div class="handle" style="margin:14px auto 0"></div>
+    <div style="padding:16px 18px 0;display:flex;align-items:center;justify-content:space-between">
+      <h3 style="margin:0;font-size:16px">📖 Hướng dẫn sử dụng</h3>
+      <button onclick="closeOverlay('ov-help')" style="background:var(--bg);border:none;border-radius:50%;width:28px;height:28px;font-size:14px;cursor:pointer;color:var(--muted)">✕</button>
+    </div>
+    <div style="padding:12px 0 0;overflow-y:auto;max-height:75vh">
+      <div id="help-content"></div>
     </div>
   </div>
 </div>
@@ -3385,19 +3555,16 @@ button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid 
 <div class="overlay" id="ov-takeaway">
   <div class="sheet">
     <div class="handle"></div>
-    <h3>🥡 Đơn mua đem về</h3>
-    <div style="background:linear-gradient(135deg,#fff7ed,#ffedd5);border-radius:var(--r10);padding:12px;margin-bottom:14px;border:1px solid #fed7aa">
-      <div style="font-size:12px;font-weight:700;color:#9a3412">Đơn hàng sẽ được tính là "Khách lẻ" nếu không chọn khách</div>
-    </div>
+    <h3>🥡 Mua đem về</h3>
     <div class="flbl">Tên khách (tuỳ chọn)</div>
     <input class="minp" id="tw-cust" placeholder="Để trống = Khách lẻ" list="cust-datalist" />
     <div class="flbl">Số điện thoại (tuỳ chọn)</div>
     <input class="minp" id="tw-phone" placeholder="SĐT..." type="tel" />
-    <div class="flbl">Ghi chú đơn (tuỳ chọn)</div>
-    <input class="minp" id="tw-note" placeholder="VD: Không đường, ít đá..." />
+    <div class="flbl">Ghi chú</div>
+    <input class="minp" id="tw-note" placeholder="Không đường, ít đá..." />
     <div class="mbtns">
       <button class="mbtn sec" onclick="closeOverlay('ov-takeaway')">Huỷ</button>
-      <button class="mbtn prim" style="background:linear-gradient(135deg,#f97316,#ea580c)" onclick="startTakeaway()">🛒 Bắt đầu chọn món</button>
+      <button class="mbtn prim" style="background:linear-gradient(135deg,#f97316,#ea580c)" onclick="startTakeaway()">🛒 Chọn món</button>
     </div>
   </div>
 </div>
@@ -3620,6 +3787,84 @@ button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid 
 </div>
 
 <div class="toast-area" id="toast-area"></div>
+
+<!-- OVERLAY ĐẶT QUA APP (màn hình giả lập app khách) -->
+<div class="overlay" id="ov-app-takeaway">
+  <div class="sheet" style="max-height:95vh;padding:0 0 20px">
+    <div class="handle" style="margin:14px auto 0"></div>
+    <!-- App header with logo -->
+    <div id="app-tw-header" style="padding:18px 18px 14px;text-align:center;background:linear-gradient(135deg,#2C1A0E,#4A2800);border-radius:0;position:relative">
+      <div id="app-tw-logo" style="width:56px;height:56px;border-radius:12px;background:rgba(255,248,220,.15);border:2px solid rgba(255,248,220,.3);display:flex;align-items:center;justify-content:center;font-size:28px;margin:0 auto 8px">☕</div>
+      <div id="app-tw-shopname" style="font-family:'Playfair Display',serif;font-size:18px;font-weight:900;color:#FFF8DC;margin-bottom:2px">Cà Phê 206</div>
+      <div id="app-tw-shopaddr" style="font-size:11px;color:rgba(255,248,220,.65);font-style:italic">206 Tân Hòa Đông</div>
+      <div style="position:absolute;top:12px;right:14px">
+        <button onclick="closeOverlay('ov-app-takeaway')" style="background:rgba(255,255,255,.15);border:none;border-radius:50%;width:30px;height:30px;color:#FFF8DC;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center">✕</button>
+      </div>
+    </div>
+    <!-- Order info -->
+    <div style="padding:14px 16px 0">
+      <div style="font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.6px;margin-bottom:10px">📝 Thông tin đơn</div>
+      <input class="minp" id="app-tw-cust" placeholder="Tên khách..." style="margin-bottom:8px" />
+      <input class="minp" id="app-tw-phone" placeholder="Số điện thoại..." type="tel" style="margin-bottom:8px" />
+      <input class="minp" id="app-tw-note" placeholder="Ghi chú: ít đường, không đá..." style="margin-bottom:12px" />
+      <!-- App selection -->
+      <div style="font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.6px;margin-bottom:8px">📱 Nền tảng đặt hàng</div>
+      <div id="app-delivery-grid" style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:12px">
+        <div class="app-select-btn selected" data-app="grab" onclick="selectDeliveryApp(this,'grab')">
+          <div class="app-logo-tile" style="background:#00b14f;color:#fff">G</div>
+          <span class="app-name">Grab</span>
+        </div>
+        <div class="app-select-btn" data-app="shopee" onclick="selectDeliveryApp(this,'shopee')">
+          <div class="app-logo-tile" style="background:#ee4d2d;color:#fff">SF</div>
+          <span class="app-name">ShopeeFood</span>
+        </div>
+        <div class="app-select-btn" data-app="be" onclick="selectDeliveryApp(this,'be')">
+          <div class="app-logo-tile" style="background:#f9d300;color:#1a1a1a">be</div>
+          <span class="app-name">Be</span>
+        </div>
+        <div class="app-select-btn" data-app="baemin" onclick="selectDeliveryApp(this,'baemin')">
+          <div class="app-logo-tile" style="background:#3ac5a2;color:#fff">B</div>
+          <span class="app-name">Baemin</span>
+        </div>
+        <div class="app-select-btn" data-app="xanh" onclick="selectDeliveryApp(this,'xanh')">
+          <div class="app-logo-tile" style="background:#1a73e8;color:#fff;font-size:13px">XSM</div>
+          <span class="app-name">Xanh SM</span>
+        </div>
+        <div class="app-select-btn" data-app="loship" onclick="selectDeliveryApp(this,'loship')">
+          <div class="app-logo-tile" style="background:#e31837;color:#fff">L</div>
+          <span class="app-name">Loship</span>
+        </div>
+        <div class="app-select-btn" data-app="direct" onclick="selectDeliveryApp(this,'direct')">
+          <div class="app-logo-tile" style="background:#92400e;color:#FFF8DC;font-size:20px">📞</div>
+          <span class="app-name">Trực tiếp</span>
+        </div>
+        <div class="app-select-btn" data-app="other" onclick="selectDeliveryApp(this,'other')">
+          <div class="app-logo-tile" style="background:#6b3fa0;color:#fff;font-size:20px">📦</div>
+          <span class="app-name">Khác</span>
+        </div>
+      </div>
+      <!-- Slot selection -->
+      <div style="font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.6px;margin-bottom:8px">🎯 Lượt xử lý</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px" id="app-tw-slots">
+        <div id="app-slot-1" class="app-slot-btn" onclick="selectAppSlot(1)" style="border:2px solid var(--border);border-radius:8px;padding:10px;text-align:center;cursor:pointer;transition:all .18s;background:var(--surface)">
+          <div style="font-size:20px">1️⃣</div>
+          <div style="font-size:11px;font-weight:700;color:var(--text);margin-top:4px">Lượt 1</div>
+          <div id="app-slot-1-status" style="font-size:10px;color:var(--muted);margin-top:2px">Trống</div>
+        </div>
+        <div id="app-slot-2" class="app-slot-btn" onclick="selectAppSlot(2)" style="border:2px solid var(--border);border-radius:8px;padding:10px;text-align:center;cursor:pointer;transition:all .18s;background:var(--surface)">
+          <div style="font-size:20px">2️⃣</div>
+          <div style="font-size:11px;font-weight:700;color:var(--text);margin-top:4px">Lượt 2</div>
+          <div id="app-slot-2-status" style="font-size:10px;color:var(--muted);margin-top:2px">Trống</div>
+        </div>
+      </div>
+      <div id="app-tw-slot-info" style="background:var(--accent-light);border-radius:8px;padding:10px 12px;font-size:11px;color:var(--accent);font-weight:600;margin-bottom:12px;display:none"></div>
+      <div class="mbtns">
+        <button class="mbtn sec" onclick="closeOverlay('ov-app-takeaway')">Huỷ</button>
+        <button class="mbtn prim" style="background:linear-gradient(135deg,#7c3aed,#6d28d9)" onclick="startAppTakeaway()">📱 Đặt đơn ngay</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 </div><!-- /app-shell -->
 
@@ -3894,6 +4139,10 @@ function mergeCloudData(d){
     S.darkMode=d.darkMode||S.darkMode;
     S.menuIngr=d.menuIngr||S.menuIngr;
     S.recipes=d.recipes||S.recipes||{};
+    S.twSlots=d.twSlots||S.twSlots||{1:{status:'free'},2:{status:'free'}};
+    if(d.twQueue)try{S.twQueue=JSON.parse(d.twQueue);}catch(e){}
+    S.twNextSlot=d.twNextSlot||S.twNextSlot||1;
+    S.ttsConfig=d.ttsConfig||S.ttsConfig||{};
     S.curStaff=d.curStaff||S.curStaff;
     // Parse JSON strings
     if(d.orders)try{S.orders=JSON.parse(d.orders);}catch(e){}
@@ -3989,7 +4238,7 @@ function resetAll(){
 
 function initS(){
   const saved=loadS();
-  if(saved){S=saved;for(let i=1;i<=20;i++)if(!S.tables[i])S.tables[i]={status:'free',amt:0};if(!S.debts)S.debts={};if(!S.custList)S.custList=[];if(!S.staffList)S.staffList=[{id:'s1',nm:'An',role:'Thu ngân',ph:''}];if(!S.shop)S.shop={name:'206 Tân Hòa Đông',addr:'206 Tân Hòa Đông',phone:'',slogan:'Cảm ơn quý khách!'};if(!S.bank)S.bank={bank:'',acct:'',name:''};if(!S.theme)S.theme=0;if(!S.tableConfig)S.tableConfig={a:5,b:5};if(!S.kho)S.kho={};if(!S.menuIngr)S.menuIngr={};if(!S.menuView)S.menuView='grid';if(!S.recipes)S.recipes={};return;}
+  if(saved){S=saved;for(let i=1;i<=20;i++)if(!S.tables[i])S.tables[i]={status:'free',amt:0};if(!S.debts)S.debts={};if(!S.custList)S.custList=[];if(!S.staffList)S.staffList=[{id:'s1',nm:'An',role:'Thu ngân',ph:''}];if(!S.shop)S.shop={name:'206 Tân Hòa Đông',addr:'206 Tân Hòa Đông',phone:'',slogan:'Cảm ơn quý khách!'};if(!S.bank)S.bank={bank:'',acct:'',name:''};if(!S.theme)S.theme=0;if(!S.tableConfig)S.tableConfig={a:5,b:5};if(!S.kho)S.kho={};if(!S.menuIngr)S.menuIngr={};if(!S.menuView)S.menuView='grid';if(!S.recipes)S.recipes={};if(!S.twSlots)S.twSlots={1:{status:'free'},2:{status:'free'}};if(!S.twQueue)S.twQueue=[];if(!S.twNextSlot)S.twNextSlot=1;if(!S.ttsConfig)S.ttsConfig={};return;}
   S={
     tables:{},cart:{},orders:[],customers:{},
     selCat:'Tất cả',cartOpen:false,curTable:null,newOrders:0,
@@ -4009,6 +4258,10 @@ function initS(){
     kho:{},        // {nlId:{id,nm,unit,qty,minQty}}
     menuIngr:{},   // {menuId:[{nlId,qty}]}
     menuView:'grid',
+    twSlots:{1:{status:'free'},2:{status:'free'}},
+    twQueue:[],
+    twNextSlot:1,
+    ttsConfig:{},
   };
   for(let i=1;i<=20;i++)S.tables[i]={status:'free',amt:0};
 }
@@ -4081,34 +4334,43 @@ function renderTables(){
   const todayRev=Object.entries(S.rp.daily||{}).reduce((s,[d,v])=>d===today()?s+v:s,0);
 
   let h=`
-  <div class="dash-stats" style="padding:12px 12px 0">
-    <div class="dash-stat green" onclick="sw('report',document.querySelector('.tab[data-sc=report]'))">
+  <div style="display:flex;gap:9px;padding:12px 12px 0;overflow-x:auto;scrollbar-width:none">
+    <div class="dash-stat green" style="flex:1;min-width:120px;cursor:pointer" onclick="sw('report',document.querySelector('.tab[data-sc=report]'))">
       <div class="dash-stat-icon">💰</div>
       <div class="dash-stat-val">${todayRev>=1000?Math.round(todayRev/1000)+'k':fmt(todayRev)}</div>
-      <div class="dash-stat-lbl">Doanh thu hôm nay</div>
+      <div class="dash-stat-lbl">Hôm nay</div>
     </div>
-    <div class="dash-stat orange" onclick="sw('orders',document.querySelector('.tab[data-sc=orders]'))">
+    <div class="dash-stat orange" style="flex:1;min-width:100px;cursor:pointer" onclick="sw('orders',document.querySelector('.tab[data-sc=orders]'))">
       <div class="dash-stat-icon">🍳</div>
       <div class="dash-stat-val">${pendingOrders}</div>
-      <div class="dash-stat-lbl">Đơn đang làm</div>
+      <div class="dash-stat-lbl">Đang làm</div>
     </div>
-    <div class="dash-stat blue">
+    <div class="dash-stat blue" style="flex:1;min-width:100px">
       <div class="dash-stat-icon">🪑</div>
-      <div class="dash-stat-val">${occCount}/${allTables.length}</div>
+      <div class="dash-stat-val">${occCount}<span style="font-size:12px;font-weight:500;color:var(--muted)">/${allTables.length}</span></div>
       <div class="dash-stat-lbl">Bàn có khách</div>
     </div>
-    <div class="dash-stat green">
+    <div class="dash-stat" style="flex:1;min-width:100px;border-color:var(--border)">
       <div class="dash-stat-icon">✅</div>
-      <div class="dash-stat-val">${S.rp.orders||0}</div>
+      <div class="dash-stat-val" style="color:var(--text)">${S.rp.orders||0}</div>
       <div class="dash-stat-lbl">Đơn hôm nay</div>
     </div>
   </div>
-  <div class="zone-actions">
+  <div class="zone-actions" style="flex-wrap:wrap;gap:8px">
     <button class="takeaway-btn" onclick="openTakeaway()">🥡 Mua đem về</button>
-  </div>`;
+    <button class="takeaway-btn" style="background:linear-gradient(135deg,#7c3aed,#6d28d9);box-shadow:0 2px 8px rgba(124,58,237,.35)" onclick="openAppTakeaway()">📱 Đặt qua App</button>
+  </div>
+  <div style="display:flex;gap:12px;padding:4px 14px 0;flex-wrap:wrap">
+    <span style="display:flex;align-items:center;gap:4px;font-size:9px;font-weight:700;color:var(--muted)"><span style="width:10px;height:4px;border-radius:2px;background:#4ade80;display:inline-block"></span>Trống</span>
+    <span style="display:flex;align-items:center;gap:4px;font-size:9px;font-weight:700;color:var(--muted)"><span style="width:10px;height:4px;border-radius:2px;background:#f97316;display:inline-block"></span>Có khách</span>
+    <span style="display:flex;align-items:center;gap:4px;font-size:9px;font-weight:700;color:var(--muted)"><span style="width:10px;height:4px;border-radius:2px;background:#e11d48;display:inline-block"></span>Chờ thu tiền</span>
+    <span style="display:flex;align-items:center;gap:4px;font-size:9px;font-weight:700;color:var(--muted)"><span style="width:10px;height:4px;border-radius:2px;background:#7c3aed;display:inline-block"></span>Mang về</span>
+  </div>
+`;
 
   zones.forEach(z=>{
-    h+=`<div class="zone-hd"><span class="zone-dot"></span><span class="zone-txt">${z.ic} ${z.nm}</span></div><div class="tbl-grid">`;
+    const zFree=z.t.filter(n=>!(S.tables[n]&&S.tables[n].status==='occupied')).length;
+    h+=`<div class="zone-hd"><span class="zone-dot"></span><span class="zone-txt">${z.ic} ${z.nm}</span><span class="zone-free-cnt">${zFree} trống</span></div><div class="tbl-grid">`;
     z.t.forEach(n=>{
       const tb=S.tables[n]||{status:'free',amt:0};
       const cl=tb.status==='occupied'?'occ':tb.takeaway?'takeaway':'free';
@@ -4119,23 +4381,61 @@ function renderTables(){
       // Count items from active orders for this table
       const activeOrders=S.orders.filter(o=>o.table===n&&(o.status==='pending'||o.status==='done'));
       const itemCount=activeOrders.reduce((s,o)=>s+(o.items||[]).reduce((ss,it)=>ss+it.qty,0),0);
-      h+=`<div class="tc ${cl}${sel}" onclick="selTable(${n})">
-        <div class="tc-pulse"></div>
-        <div class="tc-num">${n}</div>
-        <div class="tc-st">${tb.status==='occupied'?'Có khách':'Trống'}</div>
-        ${tb.takeaway?`<div class="tc-take-tag">🥡</div>`:''}
-        <div class="tc-sub">${c?c.nm:''}</div>
-        ${tb.status==='occupied'?`<div class="tc-amt">${fmt(tb.amt)}</div>`:''}
-        ${tb.status==='occupied'&&itemCount>0?`<div class="tc-sub" style="color:var(--orange);font-weight:700">${itemCount} món</div>`:''}
-        ${debt?`<div class="tc-debt">Nợ</div>`:''}
+      // Detect paying status (has order done, not yet paid)
+      const hasDoneOrder=S.orders.some(o=>o.table===n&&o.status==='done');
+      const payingCl=hasDoneOrder&&tb.status==='occupied'?' paying':'';
+      // Delivery app badge for takeaway
+      const twApp=tb.deliveryApp;
+      const twAppInfo=twApp&&APP_INFO[twApp];
+      // Duration
+      let dur='';
+      if(tb.status==='occupied'&&tb.checkin){
+        const mins=Math.round((Date.now()-tb.checkin)/60000);
+        dur=mins<60?mins+'ph':(Math.floor(mins/60)+'g'+(mins%60?String(mins%60).padStart(2,'0'):''));
+      }
+      // Status label & badge
+      const statusLabel=tb.takeaway?'App':tb.status==='occupied'?(hasDoneOrder?'Thu tiền':'Có khách'):'Trống';
+      // Chairs: show up to 6 seats, mark occupied count
+      const maxSeats=6;
+      const usedSeats=tb.status==='occupied'?Math.min(itemCount||1,maxSeats):tb.takeaway?1:0;
+      const chairsHtml=Array.from({length:maxSeats},(_,i)=>`<div class="tc-chair${i<usedSeats?' used':''}"></div>`).join('');
+      // Amount display
+      const amtStr=tb.amt>=1000?Math.round(tb.amt/1000)+'k':tb.amt>0?fmt(tb.amt):'';
+      // App badge
+      const appBadge=twAppInfo?`<span style="display:inline-flex;align-items:center;gap:3px"><span style="font-size:8px;font-weight:900;color:${twAppInfo.text};background:${twAppInfo.bg};border-radius:3px;padding:1px 5px;font-family:'Lora',serif">${twAppInfo.icon}</span><span style="font-size:9px;font-weight:700;color:var(--text)">${twAppInfo.label}</span></span>`:'';
+      h+=`<div class="tc ${cl}${sel}${payingCl}" onclick="selTable(${n})">
+        <div class="tc-stripe"></div>
+        ${dur?`<div class="tc-dur">⏱ ${dur}</div>`:''}
+        <div class="tc-body">
+          <div class="tc-head">
+            <div class="tc-num">Bàn ${n}</div>
+            <span class="tc-badge">${statusLabel}${hasDoneOrder&&!payingCl?' 💳':''}</span>
+          </div>
+          <div class="tc-chairs">${chairsHtml}</div>
+          ${c&&c.nm?`<div class="tc-info">👤 <b>${c.nm}</b>${debt?' <span style="color:#e11d48;font-weight:800">⚠ Nợ</span>':''}</div>`:''}
+          ${appBadge?`<div class="tc-info">${appBadge}</div>`:''}
+          ${itemCount>0?`<div class="tc-info">🍽 <b>${itemCount} món</b></div>`:''}
+          ${amtStr?`<div class="tc-info amt">${amtStr}</div>`:''}
+          ${tb.status==='free'&&!tb.takeaway?`<div class="tc-info" style="color:#86efac;margin-top:2px">✓ Sẵn sàng</div>`:''}
+        </div>
       </div>`;
     });
     h+='</div>';
   });
-  document.getElementById('sc-tables').innerHTML=h;
+  // Append slots container placeholder at the end (below all zones / Khu B)
+  h+='<div id="tw-slots-container"></div>';
+  const tabContent=document.getElementById('tables-content');
+  if(tabContent){tabContent.innerHTML=h;}
+  else{document.getElementById('sc-tables').innerHTML='<div id="tables-content">'+h+'</div>';}
+  renderTWSlots();
 }
 function selTable(n){
-  S.curTable=n;S.cart={};save();renderTables();
+  S.curTable=n;S.cart={};
+  // Record checkin if first time
+  if(S.tables[n]&&S.tables[n].status==='occupied'&&!S.tables[n].checkin){
+    S.tables[n].checkin=Date.now();
+  }
+  save();renderTables();
   const tb=S.tables[n]||{};
   const takeTag=tb.takeaway?` 🥡`:'';
   document.getElementById('ord-tbl-lbl').textContent='Bàn '+n+takeTag;
@@ -4346,6 +4646,8 @@ function startTakeaway(){
     S.customers[tbl]={nm:'Khách lẻ',ph:phone};
   }
   if(note)S.tables[tbl].takeawayNote=note;
+  // Mua đem về = khách lẻ, không gán app giao hàng
+  delete S.tables[tbl].deliveryApp;
   save();
   closeOverlay('ov-takeaway');
   document.getElementById('ord-tbl-lbl').textContent='Bàn '+tbl+' 🥡';
@@ -4449,6 +4751,7 @@ function placeOrder(){
   const custNm=c?c.nm:'Khách lẻ';
   S.orders.unshift({id:oid,table:S.curTable,items,total,status:'pending',staff:S.curStaff||'An',cust:custNm,takeaway:!!tb.takeaway,time:new Date().toLocaleTimeString('vi-VN',{hour:'2-digit',minute:'2-digit'}),date:today()});
   S.tables[S.curTable].status='occupied';
+  if(!S.tables[S.curTable].checkin)S.tables[S.curTable].checkin=Date.now();
   S.tables[S.curTable].amt=(S.tables[S.curTable].amt||0)+total;
   S.newOrders++;
   document.getElementById('bell-n').textContent=S.newOrders;
@@ -4458,6 +4761,29 @@ function placeOrder(){
   if(S.cartOpen)toggleCart();
   closeCartPanel();
   renderTables();
+  // TTS announcement
+  const _ord=S.orders.find(x=>x.id===oid);
+  if(_ord){
+    // Carry deliveryApp from table meta to order
+    const tblMeta=S.tables[_ord.table]||{};
+    if(tblMeta.deliveryApp)_ord.deliveryApp=tblMeta.deliveryApp;
+    speakOrder(_ord);
+    // Assign takeaway slot if applicable
+    if(_ord.takeaway){
+      const slotPref=S._pendingTWSlot||0;
+      delete S._pendingTWSlot;
+      ensureTWSlots();
+      const orderData={orderId:oid,custNm:_ord.cust,total:_ord.total,time:_ord.time,items:_ord.items};
+      const assignedSlot=assignTWSlot(orderData);
+      if(assignedSlot){
+        showToast(`🥡 Đơn ${oid} → Lượt ${assignedSlot}!`,'orange');
+      } else {
+        showToast(`⏳ Đơn ${oid} vào hàng chờ luân phiên!`,'orange');
+      }
+      renderTWSlots();
+      renderTables();
+    }
+  }
   showToast('Đã gửi '+oid+' lên bếp 🔔','green');
 }
 
@@ -4757,8 +5083,15 @@ function setOrdTab(tab,el){
   renderOrders();
 }
 function renderOrders(){
-  const active=S.orders.filter(o=>o.status==='pending'||o.status==='done');
-  const done=S.orders.filter(o=>o.status==='paid');
+  // Apply delivery app filter
+  const appF=_ordAppFilter||'all';
+  function matchAppFilter(o){
+    if(appF==='all')return true;
+    if(appF==='table')return !o.takeaway;
+    return o.deliveryApp===appF;
+  }
+  const active=S.orders.filter(o=>(o.status==='pending'||o.status==='done')&&matchAppFilter(o));
+  const done=S.orders.filter(o=>o.status==='paid'&&matchAppFilter(o));
   // badges
   const activePending=S.orders.filter(o=>o.status==='pending').length;
   const acntEl=document.getElementById('ord-active-cnt');
@@ -4781,7 +5114,7 @@ function renderOrders(){
       return`
       <div class="oc ${o.status}">
         <div class="oc-top">
-          <div class="oc-title">${o.id} · Bàn ${o.table}${o.cust&&o.cust!=='Khách lẻ'?' · '+o.cust:''}${o.takeaway?' 🥡':''}</div>
+          <div class="oc-title" style="display:flex;align-items:center;gap:6px;flex-wrap:wrap">${o.id} · ${o.takeaway?'🥡 Mang về':'Bàn '+o.table}${o.cust&&o.cust!=='Khách lẻ'?' · '+o.cust:''} ${o.deliveryApp?getAppBadgeHtml(o.deliveryApp):''}</div>
           <span class="ob ${o.status==='pending'?'ob-p':'ob-d'}">${o.status==='pending'?'⏳ Đang làm':'✅ Xong bếp'}</span>
         </div>
         <div class="oc-items">${o.items.map(i=>`${i.ic||''} <b>${i.n}</b> ×${i.qty}${i.note?` <em style="color:var(--orange);font-style:italic">→ ${i.note}</em>`:''}`).join('<br>')}</div>
@@ -4808,7 +5141,7 @@ function renderOrders(){
     else dlEl.innerHTML=done.map(o=>`
       <div class="oc done-paid">
         <div class="oc-top">
-          <div class="oc-title">${o.id} · Bàn ${o.table}${o.cust&&o.cust!=='Khách lẻ'?' · '+o.cust:''}${o.takeaway?' 🥡':''}</div>
+          <div class="oc-title" style="display:flex;align-items:center;gap:6px;flex-wrap:wrap">${o.id} · ${o.takeaway?'🥡 Mang về':'Bàn '+o.table}${o.cust&&o.cust!=='Khách lẻ'?' · '+o.cust:''} ${o.deliveryApp?getAppBadgeHtml(o.deliveryApp):''}</div>
           <span class="ob ob-paid">💙 Đã thu tiền</span>
         </div>
         <div class="oc-items">${o.items.map(i=>`${i.ic||''} ${i.n} ×${i.qty}`).join(' · ')}</div>
@@ -4824,7 +5157,21 @@ function renderOrders(){
 }
 function doneOrder(id){
   const o=S.orders.find(x=>x.id===id);
-  if(o){o.status='done';S.newOrders=Math.max(0,S.newOrders-1);document.getElementById('bell-n').textContent=S.newOrders||0;save();}
+  if(o){
+    o.status='done';
+    S.newOrders=Math.max(0,S.newOrders-1);
+    document.getElementById('bell-n').textContent=S.newOrders||0;
+    save();
+    // If takeaway, mark slot as done (trigger queue)
+    if(o.takeaway){
+      ensureTWSlots();
+      const slotEntry=[1,2].find(sl=>S.twSlots[sl]&&S.twSlots[sl].orderId===id);
+      if(slotEntry!==undefined){
+        completeTWSlot(slotEntry);
+        showToast('🥡 Lượt '+slotEntry+' xong — đơn tiếp theo nhảy vào!','green');
+      }
+    }
+  }
   renderOrders();showToast('✅ Đơn '+id+' hoàn tất! Sẵn sàng thu tiền.','green');
 }
 
@@ -5195,7 +5542,7 @@ function renderReport(){
     <div class="inv-row" id="inv-row-${o.id}">
       <div class="inv-num">${i+1}</div>
       <div class="inv-info">
-        <div class="inv-tbl">${o.takeaway?'🥡 Mang về':(o.table?'🪑 Bàn '+o.table:'—')}${o.cust?' · '+o.cust:''}</div>
+        <div class="inv-tbl">${o.takeaway?'🥡 Mang về':(o.table?'🪑 Bàn '+o.table:'—')}${o.cust?' · '+o.cust:''} ${o.deliveryApp?`<span class="app-badge ${o.deliveryApp}">${APP_INFO[o.deliveryApp]?.label||o.deliveryApp}</span>`:''}</div>
         <div class="inv-time">${o.date||''}${o.time?' · '+o.time:''} · ${(o.items||[]).length} món</div>
       </div>
       <div class="inv-amt">${fmt(o.finalAmt||o.total||0)}</div>
@@ -5213,6 +5560,7 @@ function renderReport(){
       <div class="rc"><div class="rc-lbl">📈 Lợi nhuận</div><div class="rc-val green">${fmt(profit)}</div></div>
       <div class="rc" style="grid-column:1/-1"><div class="rc-lbl">⚠️ Tổng công nợ</div><div class="rc-val red">${fmt(debtTotal)}</div></div>
     </div>
+    <div class="chart-card" id="app-stats-card" style="margin-bottom:10px"><h4>📱 Doanh thu theo App giao hàng</h4><div id="app-stats-content"></div></div>
     <div class="chart-card"><h4>📈 Doanh thu 7 ngày</h4><div style="position:relative;height:180px"><canvas id="rev-c"></canvas></div></div>
     <div class="top-card"><h4>🏆 Top món bán chạy</h4>
     ${top.length?top.map(([nm,d],i)=>`<div class="top-row"><div class="top-rank">${['🥇','🥈','🥉','4','5','6'][i]}</div><div class="top-nm">${nm}</div><div class="top-bw"><div class="top-b" style="width:${Math.round(d.qty/maxQty*100)}%"></div></div><div class="top-v">${d.qty}</div></div>`).join('')
@@ -5225,6 +5573,7 @@ function renderReport(){
       </div>
       ${invRows}
     </div>`;
+  renderAppStats();
   if(rpChart){rpChart.destroy();rpChart=null;}
   const ctx=document.getElementById('rev-c');
   if(ctx&&typeof Chart!=='undefined'){
@@ -5374,7 +5723,7 @@ function saveImg(){if(!S.imgEditId)return;if(S.pendingImg)S.imgs[S.imgEditId]=S.
 // ══════════════════════════════════════════════
 //  OVERLAYS
 // ══════════════════════════════════════════════
-function openOverlay(id){document.getElementById(id).classList.add('open');}
+function openOverlay(id){document.getElementById(id).classList.add('open');if(id==='ov-help')renderHelpContent();}
 function closeOverlay(id){document.getElementById(id).classList.remove('open');}
 document.querySelectorAll('.overlay').forEach(ov=>{ov.addEventListener('click',e=>{if(e.target===ov)ov.classList.remove('open');});});
 // Close PDF modal on backdrop click
@@ -6825,6 +7174,7 @@ function processQROrder(order){
   renderTables();
   // Show notification
   showToast(`🔔 Bàn ${order.table} gọi món qua QR! ${fmt(order.total)}`,'orange');
+  speakOrder({table:order.table,total:order.total,items:order.items||[],cust:order.cust||'Khách lẻ',takeaway:false});
   // Auto-switch to orders tab to show
   if(document.getElementById('sc-orders').classList.contains('on')){renderOrders();}
 }
@@ -7400,6 +7750,535 @@ function initLoginBgSetting(){
 // ══════════════════════════════════════════════
 //  INIT
 // ══════════════════════════════════════════════
+// ══════════════════════════════════════════════
+//  TTS — GIỌNG ĐỌC THÔNG BÁO
+// ══════════════════════════════════════════════
+let _ttsEnabled=false;
+let _ttsVoice=null;
+let _ttsRate=1;
+let _ttsVol=1;
+let _ttsMsg='Có đơn mới bàn {table}';
+let _ttsVoices=[];
+let _ttsReady=false;
+
+function initTTS(){
+  if(!('speechSynthesis' in window))return;
+  const loadVoices=()=>{
+    _ttsVoices=window.speechSynthesis.getVoices();
+    renderVoiceList();
+    _ttsReady=true;
+  };
+  loadVoices();
+  window.speechSynthesis.onvoiceschanged=loadVoices;
+  // Load saved settings
+  const cfg=S.ttsConfig||{};
+  _ttsEnabled=cfg.enabled||false;
+  _ttsRate=cfg.rate||1;
+  _ttsVol=cfg.vol||1;
+  _ttsMsg=cfg.msg||'Có đơn mới bàn {table}';
+  const tog=document.getElementById('tts-toggle');
+  const rate=document.getElementById('tts-rate');
+  const vol=document.getElementById('tts-vol');
+  const msg=document.getElementById('tts-msg');
+  const rateVal=document.getElementById('tts-rate-val');
+  const volVal=document.getElementById('tts-vol-val');
+  if(tog)tog.checked=_ttsEnabled;
+  if(rate){rate.value=_ttsRate;if(rateVal)rateVal.textContent=_ttsRate+'x';}
+  if(vol){vol.value=_ttsVol;if(volVal)volVal.textContent=Math.round(_ttsVol*100)+'%';}
+  if(msg)msg.value=_ttsMsg;
+}
+function renderVoiceList(){
+  const sel=document.getElementById('tts-voice-sel');
+  if(!sel)return;
+  const voices=_ttsVoices;
+  if(!voices.length){sel.innerHTML='<option value="">Không có giọng nào</option>';return;}
+  // Prefer Vietnamese voices
+  const viVoices=voices.filter(v=>v.lang.startsWith('vi'));
+  const otherVoices=voices.filter(v=>!v.lang.startsWith('vi'));
+  let html='<option value="">-- Mặc định --</option>';
+  if(viVoices.length){
+    html+='<optgroup label="🇻🇳 Tiếng Việt">';
+    viVoices.forEach((v,i)=>{html+=`<option value="${v.name}" ${(S.ttsConfig||{}).voiceName===v.name?'selected':''}>${v.name} (${v.lang})</option>`;});
+    html+='</optgroup>';
+  }
+  html+='<optgroup label="🌐 Ngôn ngữ khác">';
+  otherVoices.slice(0,20).forEach(v=>{html+=`<option value="${v.name}" ${(S.ttsConfig||{}).voiceName===v.name?'selected':''}>${v.name} (${v.lang})</option>`;});
+  html+='</optgroup>';
+  sel.innerHTML=html;
+}
+function saveTTSSettings(){
+  const tog=document.getElementById('tts-toggle');
+  const sel=document.getElementById('tts-voice-sel');
+  const rate=document.getElementById('tts-rate');
+  const vol=document.getElementById('tts-vol');
+  const msg=document.getElementById('tts-msg');
+  _ttsEnabled=tog?tog.checked:false;
+  _ttsRate=rate?parseFloat(rate.value):1;
+  _ttsVol=vol?parseFloat(vol.value):1;
+  _ttsMsg=msg?msg.value.trim()||'Có đơn mới bàn {table}':_ttsMsg;
+  const voiceName=sel?sel.value:'';
+  _ttsVoice=_ttsVoices.find(v=>v.name===voiceName)||null;
+  if(!S.ttsConfig)S.ttsConfig={};
+  S.ttsConfig={enabled:_ttsEnabled,voiceName,rate:_ttsRate,vol:_ttsVol,msg:_ttsMsg};
+  save();
+}
+function speakOrder(order){
+  if(!_ttsEnabled)return;
+  if(!('speechSynthesis' in window))return;
+  window.speechSynthesis.cancel();
+  const items=order.items||[];
+  const itemCount=items.reduce((s,i)=>s+i.qty,0);
+  const tableStr=order.takeaway?'mang về':`bàn ${order.table}`;
+  let text=(_ttsMsg||'Có đơn mới bàn {table}')
+    .replace('{table}',tableStr)
+    .replace('{total}',Math.round((order.total||0)/1000)+'k')
+    .replace('{items}',itemCount+' món')
+    .replace('{cust}',order.cust&&order.cust!=='Khách lẻ'?order.cust:'khách lẻ');
+  const utter=new SpeechSynthesisUtterance(text);
+  if(_ttsVoice)utter.voice=_ttsVoice;
+  utter.rate=_ttsRate||1;
+  utter.volume=_ttsVol||1;
+  utter.lang=(_ttsVoice&&_ttsVoice.lang)||'vi-VN';
+  window.speechSynthesis.speak(utter);
+}
+function previewTTS(){
+  if(!('speechSynthesis' in window)){showToast('Trình duyệt không hỗ trợ TTS!','red');return;}
+  saveTTSSettings();
+  const prev=_ttsEnabled;
+  _ttsEnabled=true;
+  speakOrder({table:'1',total:55000,items:[{qty:2}],cust:'Khách lẻ',takeaway:false});
+  _ttsEnabled=prev;
+}
+function stopTTS(){
+  if('speechSynthesis' in window)window.speechSynthesis.cancel();
+}
+
+// ══════════════════════════════════════════════
+//  TAKEAWAY SLOTS — ĐƠN LUÂN PHIÊN
+// ══════════════════════════════════════════════
+/* Slot system: 2 slots luân phiên.
+   S.twSlots = {
+     1: {status:'free'|'busy'|'done', orderId, custNm, time, total},
+     2: {...}
+   }
+   S.twQueue = [{orderId,custNm,total,time,...}]   // đơn chờ
+   _twNextSlot = 1 | 2   // lượt tiếp theo
+*/
+function ensureTWSlots(){
+  if(!S.twSlots)S.twSlots={1:{status:'free'},2:{status:'free'}};
+  if(!S.twQueue)S.twQueue=[];
+  if(!S.twNextSlot)S.twNextSlot=1;
+}
+
+function getTWSlotStatus(slot){
+  ensureTWSlots();
+  return S.twSlots[slot]||{status:'free'};
+}
+
+// Assign order to a slot. Returns slot number used or null if both busy.
+function assignTWSlot(orderData){
+  ensureTWSlots();
+  // Try preferred slot first (round-robin)
+  const pref=S.twNextSlot||1;
+  const other=pref===1?2:1;
+  let slot=null;
+  if(S.twSlots[pref].status==='free')slot=pref;
+  else if(S.twSlots[other].status==='free')slot=other;
+  if(slot){
+    S.twSlots[slot]={status:'busy',orderId:orderData.orderId,custNm:orderData.custNm,total:orderData.total,time:orderData.time,items:orderData.items};
+    // Advance next slot
+    S.twNextSlot=(slot===1?2:1);
+    save();
+    return slot;
+  }
+  // Both busy → queue
+  S.twQueue.push(orderData);
+  save();
+  return null;
+}
+
+// Mark slot as done → pull next from queue
+function completeTWSlot(slot){
+  ensureTWSlots();
+  S.twSlots[slot]={status:'free'};
+  // Check queue
+  if(S.twQueue&&S.twQueue.length>0){
+    const next=S.twQueue.shift();
+    S.twSlots[slot]={status:'busy',orderId:next.orderId,custNm:next.custNm,total:next.total,time:next.time,items:next.items};
+    save();
+    showToast(`📱 Đơn ${next.orderId} từ hàng chờ → Lượt ${slot}!`,'orange');
+    speakOrder({table:'mang về',total:next.total,items:next.items||[],cust:next.custNm,takeaway:true});
+  } else {
+    save();
+  }
+  renderTWSlots();
+  renderTables();
+}
+
+function renderTWSlots(){
+  ensureTWSlots();
+  const container=document.getElementById('tw-slots-container');
+  if(!container)return;
+  const hasActivity=(S.twSlots[1].status!=='free'||S.twSlots[2].status!=='free'||(S.twQueue&&S.twQueue.length>0));
+  if(!hasActivity){container.innerHTML='';return;}
+  // Build HTML
+  container.innerHTML=`<div id="tw-slots-panel" style="padding:8px 12px;background:linear-gradient(135deg,#fff7ed,#ffedd5);border-bottom:2px solid #fed7aa">
+    <div style="font-size:10px;font-weight:800;color:#9a3412;text-transform:uppercase;letter-spacing:.6px;margin-bottom:8px;display:flex;align-items:center;gap:6px">
+      🥡 Đơn Mang Về — Luân Phiên
+      <span style="flex:1;height:1px;background:#fed7aa"></span>
+      <span style="background:#f97316;color:#fff;border-radius:20px;padding:2px 8px;font-size:9px;font-weight:700">${(S.twQueue&&S.twQueue.length>0)?S.twQueue.length+' chờ':'0 chờ'}</span>
+    </div>
+    <div id="tw-slots-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:8px"></div>
+    <div id="tw-queue-list" style="margin-top:8px"></div>
+  </div>`;
+  const grid=document.getElementById('tw-slots-grid');
+  const queueList=document.getElementById('tw-queue-list');
+  if(grid){
+    grid.innerHTML=[1,2].map(sl=>{
+      const s=S.twSlots[sl]||{status:'free'};
+      const isBusy=s.status==='busy';
+      const bg=isBusy?'linear-gradient(135deg,#fff7ed,#ffedd5)':'var(--surface)';
+      const border=isBusy?'#f97316':'var(--border)';
+      const statusTxt=isBusy?`<b>${s.custNm||'Khách'}</b><br><span style="font-size:10px;color:#9a3412">${s.orderId} · ${s.total?Math.round(s.total/1000)+'k':'—'}</span>`:'<span style="color:#4ade80;font-weight:700">✓ Trống</span>';
+      return`<div style="border:2px solid ${border};border-radius:8px;padding:10px;background:${bg};text-align:center">
+        <div style="font-size:16px;font-weight:900;color:var(--text);margin-bottom:4px">Lượt ${sl} ${sl===S.twNextSlot?'<span style="font-size:9px;background:#f97316;color:#fff;border-radius:3px;padding:1px 5px">TIẾP THEO</span>':''}</div>
+        <div style="font-size:11px;color:var(--text);margin-bottom:6px;min-height:28px">${statusTxt}</div>
+        ${isBusy?`<button onclick="completeTWSlot(${sl})" style="background:var(--accent-grd);color:#fff;border:none;border-radius:4px;padding:5px 10px;font-size:10px;font-weight:700;cursor:pointer;width:100%;font-family:'Lora',serif;text-transform:uppercase">✓ Xong</button>`:''}
+      </div>`;
+    }).join('');
+  }
+  if(queueList){
+    if(S.twQueue&&S.twQueue.length>0){
+      queueList.innerHTML=`<div style="font-size:10px;font-weight:700;color:#9a3412;text-transform:uppercase;letter-spacing:.4px;margin-bottom:6px">⏳ Hàng chờ (${S.twQueue.length})</div>`+
+      S.twQueue.map((q,i)=>`<div style="display:flex;align-items:center;justify-content:space-between;background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:6px 10px;margin-bottom:4px;font-size:11px">
+        <span style="font-weight:700">#${i+1} ${q.custNm||'Khách lẻ'}</span>
+        <span style="color:var(--accent);font-weight:700">${q.orderId}</span>
+        <span style="color:var(--muted)">${Math.round((q.total||0)/1000)}k</span>
+      </div>`).join('');
+    } else {
+      queueList.innerHTML='';
+    }
+  }
+}
+
+let _appTWSlot=0; // selected slot in app overlay
+
+function openAppTakeaway(){
+  ensureTWSlots();
+  // Update app header with shop logo
+  const shop=S.shop||{};
+  const logoEl=document.getElementById('app-tw-logo');
+  const nameEl=document.getElementById('app-tw-shopname');
+  const addrEl=document.getElementById('app-tw-shopaddr');
+  if(nameEl)nameEl.textContent=shop.name||'Cà Phê 206';
+  if(addrEl)addrEl.textContent=shop.addr||'';
+  if(logoEl){
+    if(shop.logo){
+      logoEl.innerHTML=`<img src="${shop.logo}" style="width:100%;height:100%;object-fit:cover;border-radius:10px" onerror="this.outerHTML='☕'" />`;
+    } else {
+      logoEl.innerHTML='☕';
+    }
+  }
+  // Apply shop bg color to header
+  const hdr=document.getElementById('app-tw-header');
+  if(hdr&&shop.loginBg){
+    hdr.style.backgroundImage=`url('${shop.loginBg}')`;
+    hdr.style.backgroundSize='cover';
+    hdr.style.backgroundPosition='center';
+  }
+  // Clear inputs
+  _selectedDeliveryApp='grab';
+  document.querySelectorAll('#app-delivery-grid .app-select-btn').forEach(b=>b.classList.remove('selected'));
+  const defaultBtn=document.querySelector('#app-delivery-grid [data-app="grab"]');
+  if(defaultBtn)defaultBtn.classList.add('selected');
+  const hdr2=document.getElementById('app-tw-header');
+  if(hdr2)hdr2.style.background='linear-gradient(135deg,#00b14f,#00b14fdd)';
+  document.getElementById('app-tw-cust').value='';
+  document.getElementById('app-tw-phone').value='';
+  document.getElementById('app-tw-note').value='';
+  // Auto-select best slot
+  _appTWSlot=0;
+  const pref=S.twNextSlot||1;
+  const s1=S.twSlots[1]||{status:'free'};
+  const s2=S.twSlots[2]||{status:'free'};
+  updateAppSlotDisplay();
+  // Auto pick recommended
+  const autoSlot=s1.status==='free'?1:(s2.status==='free'?2:0);
+  if(autoSlot)selectAppSlot(autoSlot);
+  else{
+    const info=document.getElementById('app-tw-slot-info');
+    if(info){info.style.display='block';info.textContent='⏳ Cả 2 lượt đang bận — đơn sẽ vào hàng chờ và nhảy vào khi có lượt trống!';}
+    _appTWSlot=-1; // will queue
+  }
+  openOverlay('ov-app-takeaway');
+}
+
+function updateAppSlotDisplay(){
+  ensureTWSlots();
+  [1,2].forEach(sl=>{
+    const el=document.getElementById('app-slot-'+sl);
+    const st=document.getElementById('app-slot-'+sl+'-status');
+    const s=S.twSlots[sl]||{status:'free'};
+    if(!el||!st)return;
+    const isBusy=s.status==='busy';
+    const isNext=S.twNextSlot===sl;
+    el.style.borderColor=_appTWSlot===sl?'var(--accent)':(isBusy?'#f97316':'var(--border)');
+    el.style.background=_appTWSlot===sl?'var(--accent-light)':(isBusy?'#fff7ed':'var(--surface)');
+    st.textContent=isBusy?`Đang làm · ${s.custNm||''}`:(isNext?'✓ Lượt tiếp theo':'✓ Trống');
+    st.style.color=isBusy?'#9a3412':(isNext?'var(--accent)':'#4ade80');
+  });
+}
+
+function selectAppSlot(sl){
+  ensureTWSlots();
+  _appTWSlot=sl;
+  updateAppSlotDisplay();
+  const info=document.getElementById('app-tw-slot-info');
+  const s=S.twSlots[sl]||{status:'free'};
+  if(info){
+    if(s.status==='busy'){
+      info.style.display='block';
+      info.textContent=`⚠️ Lượt ${sl} đang bận — đơn sẽ vào hàng chờ và tự động nhảy vào khi xong!`;
+      info.style.background='#fff7ed';info.style.color='#9a3412';
+    } else {
+      info.style.display='block';
+      info.textContent=`✓ Lượt ${sl} đang trống — đơn sẽ được xử lý ngay!`;
+      info.style.background='var(--accent-light)';info.style.color='var(--accent)';
+    }
+  }
+}
+
+function startAppTakeaway(){
+  const custNm=document.getElementById('app-tw-cust').value.trim()||'Khách App';
+  const phone=document.getElementById('app-tw-phone').value.trim();
+  const note=document.getElementById('app-tw-note').value.trim();
+  // Create order in system first
+  // Find a free table slot
+  ensureTWSlots();
+  const a=S.tableConfig?.a||5,b=S.tableConfig?.b||5;
+  let tbl=null;
+  for(let i=1;i<=a+b;i++){if(!S.tables[i]||S.tables[i].status==='free'){tbl=i;break;}}
+  if(!tbl){tbl=1;}
+  S.curTable=tbl;
+  S.tables[tbl]=S.tables[tbl]||{status:'free',amt:0};
+  S.tables[tbl].takeaway=true;
+  S.cart={};
+  S.customers[tbl]={nm:custNm,ph:phone};
+  if(note)S.tables[tbl].takeawayNote=note;
+  save();
+  closeOverlay('ov-app-takeaway');
+  document.getElementById('ord-tbl-lbl').textContent='Bàn '+tbl+' 🥡 📱';
+  document.getElementById('ord-cust-lbl').textContent='Khách App: '+custNm+(note?' · '+note:'');
+  updateCartUI();
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('on'));
+  document.getElementById('tab-menu').classList.add('on');
+  sw('menu');
+  showToast('📱 Đơn App cho '+custNm+'! Chọn món.','orange');
+  // Store slot preference for when order is placed
+  S._pendingTWSlot=_appTWSlot;
+}
+
+// ══════════════════════════════════════════════
+//  DELIVERY APP SYSTEM
+// ══════════════════════════════════════════════
+const APP_INFO={
+  grab:   {label:'Grab',      icon:'G',   color:'#00b14f', text:'#fff',    bg:'#00b14f'},
+  shopee: {label:'ShopeeFood',icon:'SF',  color:'#ee4d2d', text:'#fff',    bg:'#ee4d2d'},
+  be:     {label:'Be',        icon:'be',  color:'#1a1a1a', text:'#f9d300', bg:'#f9d300'},
+  baemin: {label:'Baemin',    icon:'B',   color:'#3ac5a2', text:'#fff',    bg:'#3ac5a2'},
+  xanh:   {label:'Xanh SM',  icon:'XSM', color:'#1a73e8', text:'#fff',    bg:'#1a73e8'},
+  loship: {label:'Loship',    icon:'L',   color:'#e31837', text:'#fff',    bg:'#e31837'},
+  direct: {label:'Trực tiếp',icon:'📞',  color:'#78350f', text:'#FFF8DC', bg:'#92400e'},
+  other:  {label:'Khác',      icon:'…',   color:'#6b3fa0', text:'#fff',    bg:'#6b3fa0'},
+};
+
+let _selectedDeliveryApp='grab'; // default
+let _ordAppFilter='all';
+
+function selectDeliveryApp(el, app){
+  _selectedDeliveryApp=app;
+  document.querySelectorAll('#app-delivery-grid .app-select-btn').forEach(b=>b.classList.remove('selected'));
+  el.classList.add('selected');
+  // Update header color to match app brand
+  const info=APP_INFO[app]||APP_INFO.other;
+  const hdr=document.getElementById('app-tw-header');
+  if(hdr){hdr.style.background=`linear-gradient(135deg,${info.color},${info.color}dd)`;}
+  const nameEl=document.getElementById('app-tw-shopname');
+  if(nameEl)nameEl.style.color=info.text==='#fff'?'#fff':'#1a1a1a';
+}
+
+function setAppFilter(app, el){
+  _ordAppFilter=app;
+  document.querySelectorAll('#ord-app-filter-bar .cpill').forEach(b=>b.classList.remove('on'));
+  if(el)el.classList.add('on');
+  renderOrders();
+}
+
+function getAppBadgeHtml(app){
+  if(!app||app==='none') return '';
+  const info=APP_INFO[app];
+  if(!info) return '';
+  return `<span class="app-badge ${app}" style="display:inline-flex;align-items:center;gap:4px"><span style="background:${info.bg};color:${info.text};border-radius:3px;padding:1px 5px;font-size:9px;font-weight:900;font-family:'Lora',serif">${info.icon}</span>${info.label}</span>`;
+}
+
+function renderAppStats(){
+  const el=document.getElementById('app-stats-content');
+  if(!el) return;
+  // Build stats from paid orders
+  const paidOrders=(S.orders||[]).filter(o=>o.status==='paid'&&o.deliveryApp);
+  if(!paidOrders.length){
+    el.innerHTML='<div style="text-align:center;padding:16px;color:var(--muted2);font-size:12px;font-style:italic">Chưa có đơn từ app giao hàng</div>';
+    return;
+  }
+  const stats={};
+  paidOrders.forEach(o=>{
+    const a=o.deliveryApp||'other';
+    if(!stats[a])stats[a]={count:0,rev:0};
+    stats[a].count++;
+    stats[a].rev+=(o.finalAmt||o.total||0);
+  });
+  const sorted=Object.entries(stats).sort((a,b)=>b[1].rev-a[1].rev);
+  const maxRev=sorted.length?sorted[0][1].rev:1;
+  el.innerHTML=sorted.map(([app,d])=>{
+    const info=APP_INFO[app]||{label:app,icon:'📦',color:'#6b3fa0'};
+    const pct=Math.round(d.rev/maxRev*100);
+    const totalRev=paidOrders.reduce((s,o)=>s+(o.finalAmt||o.total||0),0);
+    const share=totalRev>0?Math.round(d.rev/totalRev*100):0;
+    return `<div style="display:flex;align-items:center;gap:10px;margin-bottom:9px">
+      <span class="app-badge ${app}" style="min-width:80px;justify-content:center;gap:5px"><span style="background:${info.bg};color:${info.text};border-radius:3px;padding:1px 5px;font-size:9px;font-weight:900;font-family:'Lora',serif">${info.icon}</span>${info.label}</span>
+      <div style="flex:1">
+        <div style="background:var(--bg);border-radius:4px;height:8px;overflow:hidden">
+          <div style="height:100%;background:${info.color};border-radius:4px;width:${pct}%;transition:width .5s"></div>
+        </div>
+        <div style="font-size:9px;color:var(--muted);margin-top:2px">${d.count} đơn · ${share}% doanh thu</div>
+      </div>
+      <div style="font-size:12px;font-weight:800;color:var(--text);white-space:nowrap;font-family:'Playfair Display',serif">${Math.round(d.rev/1000)}k</div>
+    </div>`;
+  }).join('');
+}
+
+// ══════════════════════════════════════════════
+
+// ══════════════════════════════════════════════
+//  ONBOARDING & HELP SYSTEM
+// ══════════════════════════════════════════════
+const ONBOARD_SLIDES=[
+  {icon:'☕',title:'Chào mừng đến với 206 POS!',desc:'Hệ thống quản lý quán cà phê toàn diện — đặt hàng, bếp, thu tiền, báo cáo trong một ứng dụng.',tips:['Giao diện thân thiện, dễ dùng trên điện thoại','Hoạt động offline, đồng bộ Firebase tùy chọn','Dữ liệu lưu tự động mỗi 10 giây']},
+  {icon:'🪑',title:'Sơ đồ bàn thông minh',desc:'Màn hình chính hiển thị toàn bộ bàn với màu sắc trạng thái trực quan.',tips:['🟢 Xanh = Trống  |  🟠 Cam = Có khách','💳 Biểu tượng thu tiền = Bếp xong, chờ thanh toán','⏱ Thời gian ngồi hiển thị ngay trên thẻ bàn','Nhấn vào bàn → chọn menu → Gửi bếp']},
+  {icon:'🍳',title:'Quản lý đơn & Bếp',desc:'Tab Đơn Hàng là trung tâm điều phối bếp — xem tất cả đơn đang làm và đã xong.',tips:['Lọc đơn theo app giao hàng (Grab, Shopee...)','Nhấn ✓ Xong bếp khi món đã làm xong','Nhấn 💳 Thu để thanh toán và đóng bàn','Xem công thức làm món ngay trên thẻ đơn']},
+  {icon:'🥡',title:'Mang về & App giao hàng',desc:'Quản lý đơn mang về theo 2 lượt luân phiên — tránh nhầm lẫn khi đông khách.',tips:['📱 Đặt qua App: chọn Grab/Shopee/Be... rồi chọn món','🥡 Mua đem về: đơn nhanh tại quầy','2 lượt luân phiên tự động, đơn chờ nhảy vào khi xong','Badge màu app hiện ngay trên thẻ đơn']},
+  {icon:'📊',title:'Báo cáo & Thống kê',desc:'Theo dõi doanh thu, đơn hàng, món bán chạy và hiệu quả từng nền tảng.',tips:['Doanh thu 7 ngày và phân tích giờ cao điểm','Thống kê doanh thu theo từng app giao hàng','Xuất Excel để phân tích chi tiết','Xem lịch sử và quản lý công nợ khách hàng']},
+  {icon:'⚙️',title:'Cài đặt & Tùy chỉnh',desc:'Tuỳ chỉnh mọi thứ theo nhu cầu quán — từ tên quán đến giọng đọc thông báo.',tips:['🔊 Giọng đọc TTS khi có đơn mới','🎨 Giao diện sáng/tối, màu sắc thương hiệu','🔥 Đồng bộ đa thiết bị qua Firebase','💾 Xuất/nhập toàn bộ dữ liệu bảo mật']},
+];
+
+const HELP_SECTIONS=[
+  {title:'🪑 Sơ đồ Bàn',items:[
+    {icon:'🟢',title:'Bàn trống',desc:'Viền xanh lá, dấu chấm xanh. Nhấn để bắt đầu gọi món.'},
+    {icon:'🟠',title:'Có khách',desc:'Viền cam, hiển thị tên khách, số món đang gọi, tiền tạm tính và thời gian ngồi.'},
+    {icon:'💳',title:'Chờ thu tiền',desc:'Bếp đã làm xong (✓ Xong bếp). Biểu tượng 💳 xuất hiện để nhắc nhở.',tip:'Nhấn vào bàn → Thu tiền → Đóng bàn'},
+    {icon:'🥡',title:'Mang về',desc:'Viền tím, hiển thị tên app giao hàng (Grab/Shopee...) ngay trên thẻ.'},
+  ]},
+  {title:'📝 Gọi Món & Đặt Hàng',items:[
+    {icon:'➕',title:'Thêm món vào giỏ',desc:'Nhấn vào món trong tab Menu. Nhấn giữ để thêm ghi chú (ít đường, không đá...).'},
+    {icon:'🔍',title:'Tìm kiếm nhanh',desc:'Gõ tên viết tắt để lọc món. VD: "cf" → Cà Phê, "tr" → Trà.'},
+    {icon:'🚀',title:'Gửi bếp',desc:'Nhấn nút "Gửi bếp" ở thanh giỏ hàng — đơn tự chuyển sang tab Bếp.',tip:'Giọng đọc TTS sẽ thông báo nếu đã bật'},
+    {icon:'✏️',title:'Sửa đơn',desc:'Nhấn vào bàn đang có khách để thêm/bớt món trước khi gửi bếp.'},
+  ]},
+  {title:'🍳 Quản Lý Bếp & Đơn',items:[
+    {icon:'⏳',title:'Đang làm',desc:'Đơn vừa gửi. Bếp xem danh sách và công thức ngay trên thẻ.'},
+    {icon:'✅',title:'Xong bếp',desc:'Nhấn "✓ Xong bếp" khi món đã hoàn thành — trạng thái bàn chuyển sang chờ thu.'},
+    {icon:'💳',title:'Thu tiền',desc:'Nhấn "💳 Thu" → chọn hình thức thanh toán → xác nhận → đóng bàn tự động.'},
+    {icon:'🔍',title:'Lọc theo App',desc:'Thanh lọc phía trên giúp xem riêng đơn Grab, Shopee, Be... hoặc đơn tại bàn.',tip:'Nhấn "Tất cả" để xem lại toàn bộ'},
+  ]},
+  {title:'🥡 Mang Về & Giao Hàng',items:[
+    {icon:'📱',title:'Đặt qua App',desc:'Chọn nền tảng (Grab/Shopee/Be/Baemin/Xanh SM...), nhập tên khách, rồi chọn món bình thường.'},
+    {icon:'🔄',title:'Luân phiên 2 lượt',desc:'Mỗi đơn tự vào Lượt 1 hoặc Lượt 2 luân phiên. Khi lượt xong → đơn tiếp theo từ hàng chờ nhảy vào ngay.',tip:'Panel luân phiên hiện tự động khi có đơn mang về'},
+    {icon:'⏳',title:'Hàng chờ',desc:'Nếu cả 2 lượt bận, đơn vào hàng chờ. Tự động chèn khi có lượt trống.'},
+  ]},
+  {title:'👥 Khách Hàng & Công Nợ',items:[
+    {icon:'👤',title:'Hồ sơ khách',desc:'Lưu tên, SĐT, lịch sử mua hàng và tổng chi tiêu mỗi khách.'},
+    {icon:'💸',title:'Công nợ',desc:'Ghi nhận khách trả thiếu, theo dõi tổng nợ và lịch sử thanh toán.'},
+    {icon:'🎁',title:'Khách VIP',desc:'Tự động đánh dấu khách thường xuyên dựa trên lịch sử ghé thăm.'},
+  ]},
+  {title:'📊 Báo Cáo',items:[
+    {icon:'💰',title:'Doanh thu',desc:'Xem doanh thu hôm nay, 7 ngày gần nhất và tháng hiện tại.'},
+    {icon:'📱',title:'Theo App giao hàng',desc:'Biểu đồ phân tích doanh thu từng nền tảng — biết Grab hay Shopee hiệu quả hơn.'},
+    {icon:'⏰',title:'Giờ cao điểm',desc:'Biểu đồ doanh thu theo khung giờ — tối ưu lịch làm việc nhân viên.'},
+    {icon:'📊',title:'Xuất Excel',desc:'Xuất toàn bộ dữ liệu ra file Excel để phân tích ngoài.',tip:'Hỗ trợ 8 loại bảng: đơn hàng, khách hàng, nhập kho...'},
+  ]},
+  {title:'⚙️ Cài Đặt',items:[
+    {icon:'🔊',title:'Giọng đọc TTS',desc:'Tự động đọc thông báo khi có đơn mới. Chọn giọng Tiếng Việt, chỉnh tốc độ và âm lượng.',tip:'Vào Cài đặt → Giọng đọc thông báo'},
+    {icon:'🔥',title:'Đồng bộ Firebase',desc:'Kết nối Firebase để dùng trên nhiều thiết bị cùng lúc (máy tính + điện thoại).'},
+    {icon:'💾',title:'Sao lưu',desc:'Xuất file .json để sao lưu an toàn. Nhập lại khi cần khôi phục.'},
+    {icon:'🎨',title:'Giao diện',desc:'Chuyển sáng/tối, chọn màu chủ đạo phù hợp thương hiệu quán.',tip:'Dark mode tiết kiệm pin thiết bị OLED'},
+  ]},
+];
+
+let _obSlide=0;
+
+function startOnboarding(){
+  _obSlide=0;
+  renderOnboardSlide();
+  document.getElementById('ov-onboard').style.display='flex';
+  // Close settings if open
+  closeOverlay('ov-help');
+}
+
+function skipOnboarding(){
+  document.getElementById('ov-onboard').style.display='none';
+  S.hasSeenOnboard=true;save();
+}
+
+function nextOnboardSlide(){
+  if(_obSlide<ONBOARD_SLIDES.length-1){
+    _obSlide++;renderOnboardSlide();
+  } else {
+    skipOnboarding();
+    showToast('🎉 Bắt đầu sử dụng 206 POS!','green');
+  }
+}
+
+function renderOnboardSlide(){
+  const sl=ONBOARD_SLIDES[_obSlide];
+  const total=ONBOARD_SLIDES.length;
+  const pct=Math.round((_obSlide+1)/total*100);
+  document.getElementById('ob-progress').style.width=pct+'%';
+  document.getElementById('ob-slides').innerHTML=`
+    <div class="ob-slide">
+      <div class="ob-slide-icon">${sl.icon}</div>
+      <div class="ob-slide-title">${sl.title}</div>
+      <div class="ob-slide-desc">${sl.desc}</div>
+      <ul class="ob-slide-tips">${sl.tips.map(t=>`<li>${t}</li>`).join('')}</ul>
+    </div>`;
+  // Dots
+  document.getElementById('ob-dots').innerHTML=ONBOARD_SLIDES.map((_,i)=>
+    `<div class="ob-dot${i===_obSlide?' on':''}" onclick="_obSlide=${i};renderOnboardSlide()"></div>`
+  ).join('');
+  // Next button label
+  document.getElementById('ob-next').textContent=_obSlide===total-1?'🚀 Bắt đầu!':'Tiếp theo →';
+}
+
+function renderHelpContent(){
+  const el=document.getElementById('help-content');
+  if(!el)return;
+  el.innerHTML=HELP_SECTIONS.map(sec=>`
+    <div class="help-section-hd">${sec.title}</div>
+    <div class="help-section">
+      ${sec.items.map(it=>`<div class="help-item">
+        <div class="help-item-icon">${it.icon}</div>
+        <div class="help-item-body">
+          <div class="help-item-title">${it.title}</div>
+          <div class="help-item-desc">${it.desc}</div>
+          ${it.tip?`<span class="help-tip">💡 ${it.tip}</span>`:''}
+        </div>
+      </div>`).join('')}
+    </div>`).join('');
+}
+
+// ══════════════════════════════════════════════
+
+// ══════════════════════════════════════════════
+
 applyTheme(S.theme||0);
 if(S.darkMode)document.body.classList.add('dark');
 if(S.customMenu&&S.customMenu.length){
@@ -7414,6 +8293,10 @@ updateCartPanel();
 checkStockAlert();
 startQROrderPolling();
 autoConnectFirebase();
+initTTS();
+renderTWSlots();
+// Show onboarding on first launch
+if(!S.hasSeenOnboard){setTimeout(startOnboarding,800);}
 setInterval(save,10000);
 setInterval(checkStockAlert,60000);
 window.addEventListener('beforeunload',save);
