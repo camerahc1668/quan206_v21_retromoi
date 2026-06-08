@@ -56,8 +56,6 @@ jobs:
             fi
           done
 
-      - name: 🛡️ Make Gradle wrapper executable
-        run: chmod +x android/gradlew
 
       - name: 📋 Cache Gradle packages
         uses: actions/cache@v4
@@ -71,7 +69,9 @@ jobs:
 
       - name: 🔨 Build Debug APK
         working-directory: android
-        run: ./gradlew assembleDebug --no-daemon
+        run: |
+          chmod +x gradlew
+          ./gradlew assembleDebug --no-daemon
 
       - name: 📦 Upload Debug APK
         uses: actions/upload-artifact@v4
