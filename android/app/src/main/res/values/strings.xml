@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">POS Cafe 206</string>
+    <string name="title_activity_main">POS Cafe 206</string>
+    <string name="package_name">com.cafe.pos206</string>
+    <string name="custom_url_scheme">com.cafe.pos206</string>
+</resources>
