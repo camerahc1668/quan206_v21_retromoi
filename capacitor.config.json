@@ -1,7 +1,7 @@
 {
   "appId": "com.cafe.pos206",
   "appName": "POS Cafe 206",
-  "webDir": ".",
+  "webDir": "www",
   "server": {
     "androidScheme": "https"
   },
